@@ -1,0 +1,295 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<h1>Python <span class="color_h1">Sets</span></h1>
+
+<hr>
+
+<h2>Set</h2>
+<p>A set is a collection which is unordered and unindexed. In Python sets are written with curly brackets.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Create a Set:</p>
+<div class="w3-code notranslate pythonHigh">
+thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}<br>print(thisset)</div>
+
+</div>
+
+<div class="w3-panel w3-note">
+  <p><strong>Note:</strong> Sets are unordered, so you cannot be sure in which 
+  order the items will appear.</p>
+</div>
+
+<hr>
+
+<h2>Access Items</h2>
+
+<p>You cannot access items in a set by referring to an index, since sets are 
+unordered the items has no index.</p>
+<p>But you can loop through the set items using a <code class="w3-codespan">for</code> 
+loop, or ask if a specified value is present in a set, by using the
+<code class="w3-codespan">in</code> keyword.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Loop through the set, and print the values:</p>
+<div class="w3-code notranslate pythonHigh">
+  thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}<br><br>for x in thisset:<br>&nbsp; print(x)</div>
+
+</div>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Check if &quot;banana&quot; is present in the set:</p>
+<div class="w3-code notranslate pythonHigh">
+  thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}<br><br>print(&quot;banana&quot; 
+  in thisset)</div>
+
+</div>
+
+<hr>
+
+<h2>Change Items</h2>
+
+<p>Once a set is created, you cannot change its items, but you can add new items.</p>
+<hr>
+
+<h2>Add Items</h2>
+
+<p>To add one item to a set use the <code class="w3-codespan">add()</code> 
+method.</p>
+<p>To add more than one item to a set use the <code class="w3-codespan">update()</code> 
+method.</p>
+
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Add an item to a set, using the <code class="w3-codespan">add()</code> 
+method:</p>
+<div class="w3-code notranslate pythonHigh">
+  thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}<br><br>
+  thisset.add(&quot;orange&quot;)<br><br>print(thisset)</div>
+
+</div>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Add multiple items to a set, using the <code class="w3-codespan">update()</code> 
+method:</p>
+<div class="w3-code notranslate pythonHigh">
+  thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}<br><br>thisset.update([&quot;orange&quot;, 
+  &quot;mango&quot;, &quot;grapes&quot;])<br><br>print(thisset)</div>
+
+</div>
+
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+
+  <!--<pre>mid_content, all: [300,250][336,280][728,90][970,250][970,90][320,50][468,60]</pre>-->
+  <div id="snhb-mid_content-0"></div>
+    
+</div>
+<hr>
+
+<h2>Get the Length of a Set</h2>
+
+<p>To determine how many items a set has, use the <code class="w3-codespan">len()</code> method.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Get the number of items in a set:</p>
+<div class="w3-code notranslate pythonHigh">
+  thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}<br><br>
+  print(len(thisset))</div>
+
+</div>
+
+<hr>
+
+<h2>Remove Item</h2>
+
+<p>To remove an item in a set, use the <code class="w3-codespan">remove()</code>, or the <code class="w3-codespan">discard()</code> method.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Remove &quot;banana&quot; by using the <code class="w3-codespan">remove()</code> 
+method:</p>
+<div class="w3-code notranslate pythonHigh">
+  thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}<br><br>
+  thisset.remove(&quot;banana&quot;)<br><br>
+  print(thisset)</div>
+
+</div>
+
+<div class="w3-panel w3-note">
+  <p><strong>Note:</strong> If the item to remove does not exist, <code class="w3-codespan">remove()</code> will raise an error.</p>
+</div>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Remove &quot;banana&quot; by using the <code class="w3-codespan">discard()</code> 
+method:</p>
+<div class="w3-code notranslate pythonHigh">
+  thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}<br><br>
+  thisset.discard(&quot;banana&quot;)<br><br>
+  print(thisset)</div>
+
+</div>
+
+<div class="w3-panel w3-note">
+<p><strong>Note:</strong> If the item to remove does not exist, <code class="w3-codespan">discard()</code> will 
+  <strong>NOT</strong> raise an error.</p>
+</div>
+
+<p>You can also use the <code class="w3-codespan">pop()</code>, method to remove 
+an item, but this method will remove the <em>last</em> item. Remember that sets 
+are unordered, so you will not know what item that gets removed.</p>
+<p>The return value of the <code class="w3-codespan">pop()</code> method is the 
+removed item.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Remove the last item by using the <code class="w3-codespan">pop()</code> 
+method:</p>
+<div class="w3-code notranslate pythonHigh">
+  thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}<br><br>
+  x =
+  thisset.pop()<br><br>print(x)<br><br>
+  print(thisset)</div>
+
+</div>
+
+<div class="w3-panel w3-note">
+<p><strong>Note:</strong> Sets are <em>unordered</em>, so when using the <code class="w3-codespan">pop()</code> method, 
+you will not know which item that gets removed.</p>
+</div>
+
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>The <code class="w3-codespan">clear()</code> 
+method empties the set:</p>
+<div class="w3-code notranslate pythonHigh">
+  thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}<br><br>
+  thisset.clear()<br><br>
+  print(thisset)</div>
+
+</div>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>The <code class="w3-codespan">del</code> keyword will delete the set 
+completely:</p>
+<div class="w3-code notranslate pythonHigh">
+  thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}<br><br>
+  del
+  thisset<br><br>
+  print(thisset)</div>
+
+</div>
+
+<hr>
+<h2>Join Two Sets</h2>
+<p>There are several ways to join two or more sets in Python.</p>
+<p>You can use the <code class="w3-codespan">union()</code> method that returns a new set containing all items from both sets,
+or the <code class="w3-codespan">update()</code> method that inserts all the items from one set into another:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>The <code class="w3-codespan">union()</code> method returns a new set with all items from both sets:</p>
+<div class="w3-code notranslate pythonHigh">
+  set1 = {&quot;a&quot;, &quot;b&quot; , &quot;c&quot;}<br>set2 = {1, 2, 3}<br><br>
+  set3 = set1.union(set2)<br>print(set3)</div>
+
+</div>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>The <code class="w3-codespan">update()</code> method inserts the items in set2 into set1:</p>
+<div class="w3-code notranslate pythonHigh">
+  set1 = {&quot;a&quot;, &quot;b&quot; , &quot;c&quot;}<br>set2 = {1, 2, 3}<br><br>
+  set1.update(set2)<br>print(set1)</div>
+
+</div>
+
+<div class="w3-panel w3-note">
+<p><strong>Note:</strong> Both <code class="w3-codespan">union()</code> and <code class="w3-codespan">update()</code>
+will exclude any duplicate items.</p>
+</div>
+
+<p>There are other methods that joins two sets and keeps ONLY the duplicates, or NEVER the duplicates, 
+check the full list of set methods in the bottom of this page.</p>
+<hr>
+
+<h2>The set() Constructor</h2>
+<p>It is also possible to use the <span class="w3-codespan">set()</span> 
+constructor to make a set.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Using the set() constructor to make a set:</p>
+<div class="w3-code notranslate pythonHigh">
+thisset = set(("apple", "banana", "cherry")) # note the double round-brackets<br>
+print(thisset)</div>
+
+</div>
+<hr>
+
+<h2>Set Methods</h2>
+
+<p>Python has a set of built-in methods that you can use on sets.</p>
+
+<table class="w3-table-all notranslate">
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr><td>add()</td><td>Adds an element to the 
+  set</td></tr>
+<tr><td>clear()</td><td>Removes all the 
+  elements from the set</td></tr>
+<tr><td>copy()</td><td>Returns a copy of the set</td></tr>
+  <tr>
+    <td>difference()</td><td>Returns a set 
+    containing the difference between two or more sets</td>
+  </tr>
+  <tr>
+    <td>difference_update()</td><td>Removes the 
+    items in this set that are also included in another, specified set</td>
+  </tr>
+<tr><td>discard()</td><td>Remove the specified 
+  item</td></tr>
+  <tr>
+    <td>intersection()</td><td>Returns a set, 
+    that is the intersection of two other sets</td>
+  </tr>
+<tr><td>intersection_update()</td><td>
+  Removes the items in this set that are not present in other, specified set(s)</td></tr>
+  <tr>
+    <td>isdisjoint()</td><td>Returns whether 
+    two sets have a intersection or not</td>
+  </tr>
+  <tr>
+    <td>issubset()</td><td>Returns whether 
+    another set contains this set or not</td>
+  </tr>
+<tr><td>issuperset()</td><td>Returns whether 
+  this set contains another set or not</td></tr>
+<tr><td>pop()</td><td>Removes an element from the 
+  set</td></tr>
+<tr><td>remove()</td><td>Removes the specified element</td></tr>
+  <tr>
+    <td>symmetric_difference()</td><td>Returns 
+    a set with the symmetric differences of two sets</td>
+  </tr>
+<tr><td>symmetric_difference_update()</td><td>
+  inserts the symmetric differences from this set and another</td></tr>
+  <tr>
+    <td>union()</td><td>Return a set containing 
+    the union of sets</td>
+  </tr>
+<tr><td>update()</td><td>Update the set with the 
+  union of this set and others</td></tr>
+</table>

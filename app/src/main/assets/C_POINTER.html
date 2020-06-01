@@ -1,0 +1,87 @@
+<h1 class="h1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; C Pointers</h1>
+<p>&nbsp;</p>
+<p>The pointer in C language is a variable which stores the address of another variable. This variable can be of type int, char, array, function, or any other pointer. The size of the pointer depends on the architecture. However, in 32-bit architecture the size of a pointer is 2 byte.</p>
+<p>Consider the following example to define a pointer which stores the address of an integer.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="datatypes">int</span>&nbsp;n&nbsp;=&nbsp;10;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="datatypes">int</span>*&nbsp;p&nbsp;=&nbsp;&amp;n;&nbsp;<span class="comment">//&nbsp;Variable&nbsp;p&nbsp;of&nbsp;type&nbsp;pointer&nbsp;is&nbsp;pointing&nbsp;to&nbsp;the&nbsp;address&nbsp;of&nbsp;the&nbsp;variable&nbsp;n&nbsp;of&nbsp;type&nbsp;integer.&nbsp;</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h2 class="h2">Declaring a pointer</h2>
+<p>The pointer in c language can be declared using * (asterisk symbol). It is also known as indirection pointer used to dereference a pointer.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="datatypes">int</span>&nbsp;*a;<span class="comment">//pointer&nbsp;to&nbsp;int</span>&nbsp;&nbsp;</li>
+<li class=""><span class="datatypes">char</span>&nbsp;*c;<span class="comment">//pointer&nbsp;to&nbsp;char</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<hr />
+<h2 class="h2">Pointer Example</h2>
+<p>An example of using pointers to print the address and value is given below.</p>
+<p><img src="https://static.javatpoint.com/cpages/images/pointer.png" alt="pointer example" /></p>
+<p>As you can see in the above figure, pointer variable stores the address of number variable, i.e., fff4. The value of number variable is 50. But the address of pointer variable p is aaa3.</p>
+<p>By the help of * (<strong>indirection operator</strong>), we can print the value of pointer variable p.</p>
+<p>Let's see the pointer example as explained for the above figure.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="preprocessor">#include&lt;stdio.h&gt;</span>&nbsp;&nbsp;</li>
+<li class=""><span class="datatypes">int</span>&nbsp;main(){&nbsp;&nbsp;</li>
+<li class="alt"><span class="datatypes">int</span>&nbsp;number=50;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="datatypes">int</span>&nbsp;*p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">p=&amp;number;<span class="comment">//stores&nbsp;the&nbsp;address&nbsp;of&nbsp;number&nbsp;variable&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="">printf(<span class="string">"Address&nbsp;of&nbsp;p&nbsp;variable&nbsp;is&nbsp;%x&nbsp;\n"</span>,p);&nbsp;<span class="comment">//&nbsp;p&nbsp;contains&nbsp;the&nbsp;address&nbsp;of&nbsp;the&nbsp;number&nbsp;therefore&nbsp;printing&nbsp;p&nbsp;gives&nbsp;the&nbsp;address&nbsp;of&nbsp;number.&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">printf(<span class="string">"Value&nbsp;of&nbsp;p&nbsp;variable&nbsp;is&nbsp;%d&nbsp;\n"</span>,*p);&nbsp;<span class="comment">//&nbsp;As&nbsp;we&nbsp;know&nbsp;that&nbsp;*&nbsp;is&nbsp;used&nbsp;to&nbsp;dereference&nbsp;a&nbsp;pointer&nbsp;therefore&nbsp;if&nbsp;we&nbsp;print&nbsp;*p,&nbsp;we&nbsp;will&nbsp;get&nbsp;the&nbsp;value&nbsp;stored&nbsp;at&nbsp;the&nbsp;address&nbsp;contained&nbsp;by&nbsp;p.&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">return</span>&nbsp;0;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h4 class="h4">Output</h4>
+<div class="codeblock3">
+<pre>Address of number variable is fff4
+Address of p variable is fff4
+Value of p variable is 50
+</pre>
+</div>
+<h3 class="h3">Pointer to array</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="datatypes">int</span>&nbsp;arr[10];&nbsp;&nbsp;</li>
+<li class=""><span class="datatypes">int</span>&nbsp;*p[10]=&amp;arr;&nbsp;<span class="comment">//&nbsp;Variable&nbsp;p&nbsp;of&nbsp;type&nbsp;pointer&nbsp;is&nbsp;pointing&nbsp;to&nbsp;the&nbsp;address&nbsp;of&nbsp;an&nbsp;integer&nbsp;array&nbsp;arr.</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h3">Pointer to a function</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="keyword">void</span>&nbsp;show&nbsp;(<span class="datatypes">int</span>);&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">void</span>(*p)(<span class="datatypes">int</span>)&nbsp;=&nbsp;&amp;display;&nbsp;<span class="comment">//&nbsp;Pointer&nbsp;p&nbsp;is&nbsp;pointing&nbsp;to&nbsp;the&nbsp;address&nbsp;of&nbsp;a&nbsp;function</span>&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h3">Pointer to structure</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="keyword">struct</span>&nbsp;st&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span>&nbsp;i;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">float</span>&nbsp;f;&nbsp;&nbsp;</li>
+<li class="">}ref;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">struct</span>&nbsp;st&nbsp;*p&nbsp;=&nbsp;&amp;ref;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>

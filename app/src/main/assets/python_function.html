@@ -1,0 +1,195 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<h1>Python <span class="color_h1">Functions</span></h1>
+
+<hr>
+
+<p class="intro">A function is a block of code which only runs when it is called.</p>
+<p class="intro">You can pass data, known as parameters, into a function.</p>
+<p class="intro">A function can return data as a result.</p>
+
+<hr>
+<h2>Creating a Function</h2>
+
+<p>In Python a function is defined using the <span class="w3-codespan">def</span> 
+keyword:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate pythonHigh">
+  def my_function():<br>&nbsp; print(&quot;Hello from a function&quot;)</div>
+</div>
+<hr>
+<h2>Calling a Function</h2>
+
+<p>To call a function, use the function name followed by parenthesis:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate pythonHigh">
+  def my_function():<br>&nbsp; print(&quot;Hello from a function&quot;)<br><br>
+  <strong>my_function()</strong></div>
+
+</div>
+
+<hr>
+<h2>Parameters</h2>
+
+<p>Information can be passed to functions as parameter.</p>
+<p>Parameters are specified after the function name, inside the parentheses.
+You can add as many parameters as you want, just separate them with a comma.</p>
+<p>
+The following example has a function with one parameter (fname).
+When the function is called, we pass along a first name,
+which is used inside the function to print the full name:
+</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate pythonHigh">
+  def my_function(<strong>fname</strong>):<br>&nbsp; print(fname + &quot; Refsnes&quot;)<br><br>
+  my_function(<strong>&quot;Emil&quot;</strong>)<br>my_function(<strong>&quot;Tobias&quot;</strong>)<br>my_function(<strong>&quot;Linus&quot;</strong>)</div>
+
+</div>
+
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+
+  <!--<pre>mid_content, all: [300,250][336,280][728,90][970,250][970,90][320,50][468,60]</pre>-->
+  <div id="snhb-mid_content-0"></div>
+    
+</div>
+<hr>
+<h2>Default Parameter Value</h2>
+
+<p>The following example shows how to use a default parameter value.</p>
+<p>If we call the function without parameter, it uses the default value:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate pythonHigh">
+  def my_function(<strong>country = &quot;Norway&quot;</strong>):<br>&nbsp; print(&quot;I am from &quot; + 
+  country)<br><br>
+  my_function(&quot;Sweden&quot;)<br>my_function(&quot;India&quot;)<br>my_function()<br>my_function(&quot;Brazil&quot;)</div>
+
+</div>
+
+<hr>
+<h2>Passing a List as a Parameter</h2>
+
+<p>You can send any data types of parameter to a function (string, number, list, dictionary etc.), 
+and it will
+be treated as the same data type inside the function.</p>
+<p>E.g. if you send a List as a parameter, it will still be a List when it 
+reaches the function:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate pythonHigh">
+  def my_function(food):<br>&nbsp; for x in food:<br>&nbsp;&nbsp;&nbsp; 
+  print(x)<br><br>fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]<br><br>
+  my_function(fruits)<br></div>
+
+</div>
+
+<hr>
+<h2>Return Values</h2>
+
+<p>To let a function return a value, use the <code class="w3-codespan">return</code> 
+statement:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate pythonHigh">
+  def my_function(x):<br>&nbsp; <strong>return 5 * x<br></strong><br>print(my_function(3))<br>print(my_function(5))<br>
+  print(my_function(9))</div>
+
+</div>
+
+<hr>
+
+<h2>Keyword Arguments</h2>
+
+<p>You can also send arguments with the <em>key</em> = <em>value</em> syntax.</p>
+<p>This way the order of the arguments does not matter.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate pythonHigh">
+  def my_function(child3, child2, child1):<br>&nbsp; print(&quot;The youngest child 
+  is &quot; + child3)<br><br>
+  my_function(child1 = &quot;Emil&quot;, child2 = &quot;Tobias&quot;, child3 = &quot;Linus&quot;)</div>
+
+</div>
+
+<div class="w3-panel w3-note">
+  <p>The phrase <em>Keyword Arguments</em> are often shortened to <em>kwargs</em> in Python documentations.</p>
+</div>
+
+<hr>
+
+<h2>Arbitrary Arguments</h2>
+
+<p>If you do not know how many arguments that will be passed into your function,
+add a <code class="w3-codespan">*</code> before the parameter name in the function definition.</p>
+
+<p>This way the function will receive a <em>tuple</em> of arguments, and can access the items accordingly:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+  <p>If the number of arguments are unknown, add a <code class="w3-codespan">*</code> before the parameter name:</p>
+<div class="w3-code notranslate pythonHigh">
+  def my_function(*kids):<br>&nbsp; print(&quot;The youngest child 
+  is &quot; + kids[2])<br><br>
+  my_function(&quot;Emil&quot;, &quot;Tobias&quot;, &quot;Linus&quot;)</div>
+
+</div>
+<hr>
+
+<h2>The pass Statement</h2>
+<p><code class="w3-codespan">function</code> definitions cannot be empty, but if 
+you for some reason have a <code class="w3-codespan">function</code> definition with no content, put in the <code class="w3-codespan">pass</code> statement to avoid getting an error.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate pythonHigh">
+  def myfunction:<br>&nbsp; pass</div>
+
+</div>
+
+<hr>
+
+<h2>Recursion</h2>
+
+<p>Python also accepts function recursion, which means a defined function can call itself.</p>
+
+<p>Recursion is a common mathematical and programming concept. It means that a function calls itself. This has the benefit of meaning that you can loop through data to reach a result.</p>
+<p>The developer should be very careful with recursion as it can be quite easy to slip into writing a function which never terminates, or one that uses excess amounts of memory or processor power. However, when written correctly recursion can be a very efficient and mathematically-elegant approach to programming.</p>
+<p>In this example, <span class="w3-codespan">tri_recursion()</span> is a function that we have defined to call itself ("recurse"). We use the <span class="w3-codespan">k</span> variable as the data, which decrements (<span class="w3-codespan">-1</span>) every time we recurse. The recursion ends when the condition is not greater than 0 (i.e. when it is 0).</p>
+<p>To a new developer it can take some time to work out how exactly this works, best way to find out is by testing and modifying it.</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Recursion Example</p>
+<div class="w3-code notranslate jsHigh">
+def tri_recursion(k):<br>
+	&nbsp;
+	if(k>0):<br>
+		&nbsp;&nbsp;&nbsp;
+		result = k+tri_recursion(k-1)<br>
+		&nbsp;&nbsp;&nbsp;
+		print(result)<br>
+	&nbsp;
+	else:<br>
+		&nbsp;&nbsp;&nbsp;
+		result = 0<br>
+	&nbsp;
+	return result<br>
+<br>
+print("\n\nRecursion Example Results")<br>
+tri_recursion(6)<br>
+</div>
+
+</div>
+<hr>

@@ -1,0 +1,55 @@
+<h1 class="h1" style="text-align: center;">Binary Tree</h1>
+<p>Binary Tree is a special type of generic tree in which, each node can have at most two children. Binary tree is generally partitioned into three disjoint subsets.</p>
+<ol class="points">
+<li>Root of the node</li>
+<li>left sub-tree which is also a binary tree.</li>
+<li>Right binary sub-tree</li>
+</ol>
+<p>A binary Tree is shown in the following image.</p>
+<p><br /><img src="https://static.javatpoint.com/ds/images/binary-tree.png" alt="Binary Tree" /></p>
+<h2 class="h2">Types of Binary Tree</h2>
+<h3 class="h3">1. Strictly Binary Tree</h3>
+<p>In Strictly Binary Tree, every non-leaf node contain non-empty left and right sub-trees. In other words, the degree of every non-leaf node will always be 2. A strictly binary tree with n leaves, will have (2n - 1) nodes.</p>
+<p>A strictly binary tree is shown in the following figure.</p>
+<p><br /><img src="https://static.javatpoint.com/ds/images/strictly-binary-tree.png" alt="Binary Tree" /></p>
+<h3 class="h3">2. Complete Binary Tree</h3>
+<p>A Binary Tree is said to be a complete binary tree if all of the leaves are located at the same level d. A complete binary tree is a binary tree that contains exactly 2^l nodes at each level between level 0 and d. The total number of nodes in a complete binary tree with depth d is 2<sup>d+1</sup>-1 where leaf nodes are 2<sup>d</sup>&nbsp;while non-leaf nodes are 2<sup>d</sup>-1.</p>
+<p><br /><img src="https://static.javatpoint.com/ds/images/complete-binary-tree.png" alt="Binary Tree" /></p>
+<h2 class="h2">Binary Tree Traversal</h2>
+<table class="alt">
+<tbody>
+<tr>
+<th>SN</th>
+<th>Traversal</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.javatpoint.com/binary-tree-preorder-traversal">Pre-order Traversal</a></td>
+<td>Traverse the root first then traverse into the left sub-tree and right sub-tree respectively. This procedure will be applied to each sub-tree of the tree recursively.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://www.javatpoint.com/binary-tree-inorder-traversal">In-order Traversal</a></td>
+<td>Traverse the left sub-tree first, and then traverse the root and the right sub-tree respectively. This procedure will be applied to each sub-tree of the tree recursively.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://www.javatpoint.com/binary-tree-postorder-traversal">Post-order Traversal</a></td>
+<td>Traverse the left sub-tree and then traverse the right sub-tree and root respectively. This procedure will be applied to each sub-tree of the tree recursively.</td>
+</tr>
+</tbody>
+</table>
+<h2 class="h2">Binary Tree representation</h2>
+<p>There are two types of representation of a binary tree:</p>
+<h3 class="h3">1. Linked Representation</h3>
+<p>In this representation, the binary tree is stored in the memory, in the form of a linked list where the number of nodes are stored at non-contiguous memory locations and linked together by inheriting parent child relationship like a tree. every node contains three parts : pointer to the left node, data element and pointer to the right node. Each binary tree has a root pointer which points to the root node of the binary tree. In an empty binary tree, the root pointer will point to null.</p>
+<p>Consider the binary tree given in the figure below.</p>
+<p><br /><img src="https://static.javatpoint.com/ds/images/binary-tree2.png" alt="Binary Tree" /></p>
+<p>In the above figure, a tree is seen as the collection of nodes where each node contains three parts : left pointer, data element and right pointer. Left pointer stores the address of the left child while the right pointer stores the address of the right child. The leaf node contains&nbsp;<strong>null</strong>&nbsp;in its left and right pointers.</p>
+<p>The following image shows about how the memory will be allocated for the binary tree by using linked representation. There is a special pointer maintained in the memory which points to the root node of the tree. Every node in the tree contains the address of its left and right child. Leaf node contains null in its left and right pointers.</p>
+<p><br /><img src="https://static.javatpoint.com/ds/images/binary-tree3.png" alt="Binary Tree" /></p>
+<h3 class="h3">2. Sequential Representation</h3>
+<p>This is the simplest memory allocation technique to store the tree elements but it is an inefficient technique since it requires a lot of space to store the tree elements. A binary tree is shown in the following figure along with its memory allocation.</p>
+<p><br /><img src="https://static.javatpoint.com/ds/images/sequential-representation-binary-tree.png" alt="Binary Tree" /></p>
+<p>In this representation, an array is used to store the tree elements. Size of the array will be equal to the number of nodes present in the tree. The root node of the tree will be present at the 1<sup>st</sup>&nbsp;index of the array. If a node is stored at ith index then its left and right children will be stored at 2i and 2i+1 location. If the 1<sup>st</sup>&nbsp;index of the array i.e. tree[1] is 0, it means that the tree is empty.</p>

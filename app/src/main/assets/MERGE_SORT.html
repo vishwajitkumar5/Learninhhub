@@ -1,0 +1,252 @@
+<h1 class="h1" style="text-align: center;">Merge sort</h1>
+<p>Merge sort is the algorithm which follows divide and conquer approach. Consider an array A of n number of elements. The algorithm processes the elements in 3 steps.</p>
+<ol class="points">
+<ol class="points">
+<li>If A Contains 0 or 1 elements then it is already sorted, otherwise, Divide A into two sub-array of equal number of elements.</li>
+<li>Conquer means sort the two sub-arrays recursively using the merge sort.</li>
+<li>Combine the sub-arrays to form a single final sorted array maintaining the ordering of the array.</li>
+</ol>
+</ol>
+<p>The main idea behind merge sort is that, the short list takes less time to be sorted.</p>
+<h2 class="h3">Complexity</h2>
+<table class="alt">
+<tbody>
+<tr>
+<th>Complexity</th>
+<th>Best case</th>
+<th>Average Case</th>
+<th>Worst Case</th>
+</tr>
+<tr>
+<td>Time Complexity</td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+</tr>
+<tr>
+<td>Space Complexity</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table>
+<h2 class="h3">Example :</h2>
+<p>Consider the following array of 7 elements. Sort the array by using merge sort.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">A&nbsp;=&nbsp;{<span class="number">10</span>,&nbsp;<span class="number">5</span>,&nbsp;<span class="number">2</span>,&nbsp;<span class="number">23</span>,&nbsp;<span class="number">45</span>,&nbsp;<span class="number">21</span>,&nbsp;<span class="number">7</span>}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><br /><img src="https://www.javatpoint.com/Sorting/images/merge-sort-example.png" alt="Merge sort" /></p>
+<h2 class="h3">Algorithm</h2>
+<ol class="points">
+<ol class="points">
+<ul class="points">
+<li><strong>Step 1</strong>: [INITIALIZE] SET I = BEG, J = MID + 1, INDEX = 0</li>
+<li><strong>Step 2</strong>: Repeat while (I &lt;= MID) AND (J&lt;=END)<br />IF ARR[I] &lt; ARR[J]<br />SET TEMP[INDEX] = ARR[I]<br />SET I = I + 1<br />ELSE<br />SET TEMP[INDEX] = ARR[J]<br />SET J = J + 1<br />[END OF IF]<br />SET INDEX = INDEX + 1<br />[END OF LOOP]<br />Step 3: [Copy the remaining<br />elements of right sub-array, if<br />any]<br />IF I &gt; MID<br />Repeat while J &lt;= END<br />SET TEMP[INDEX] = ARR[J]<br />SET INDEX = INDEX + 1, SET J = J + 1<br />[END OF LOOP]<br />[Copy the remaining elements of<br />left sub-array, if any]<br />ELSE<br />Repeat while I &lt;= MID<br />SET TEMP[INDEX] = ARR[I]<br />SET INDEX = INDEX + 1, SET I = I + 1<br />[END OF LOOP]<br />[END OF IF]</li>
+<li><strong>Step 4</strong>: [Copy the contents of TEMP back to ARR] SET K = 0</li>
+<li><strong>Step 5</strong>: Repeat while K &lt; INDEX<br />SET ARR[K] = TEMP[K]<br />SET K = K + 1<br />[END OF LOOP]</li>
+<li><strong>Step 6</strong>: Exit</li>
+</ul>
+</ol>
+</ol>
+<p><strong>MERGE_SORT(ARR, BEG, END)</strong></p>
+<ol class="points">
+<ol class="points">
+<ul class="points">
+<li><strong>Step 1</strong>: IF BEG &lt; END<br />SET MID = (BEG + END)/2<br />CALL MERGE_SORT (ARR, BEG, MID)<br />CALL MERGE_SORT (ARR, MID + 1, END)<br />MERGE (ARR, BEG, MID, END)<br />[END OF IF]</li>
+<li><strong>Step 2</strong>: END</li>
+</ul>
+</ol>
+</ol>
+<h2 class="h2">C Program</h2>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">#include&lt;stdio.h&gt;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">void</span>&nbsp;mergeSort(<span class="keyword">int</span>[],<span class="keyword">int</span>,<span class="keyword">int</span>);&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;merge(<span class="keyword">int</span>[],<span class="keyword">int</span>,<span class="keyword">int</span>,<span class="keyword">int</span>);&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">void</span>&nbsp;main&nbsp;()&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;a[<span class="number">10</span>]=&nbsp;{<span class="number">10</span>,&nbsp;<span class="number">9</span>,&nbsp;<span class="number">7</span>,&nbsp;<span class="number">101</span>,&nbsp;<span class="number">23</span>,&nbsp;<span class="number">44</span>,&nbsp;<span class="number">12</span>,&nbsp;<span class="number">78</span>,&nbsp;<span class="number">34</span>,&nbsp;<span class="number">23</span>};&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;i;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;mergeSort(a,<span class="number">0</span>,<span class="number">9</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"printing&nbsp;the&nbsp;sorted&nbsp;elements"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"\n%d\n"</span>,a[i]);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">void</span>&nbsp;mergeSort(<span class="keyword">int</span>&nbsp;a[],&nbsp;<span class="keyword">int</span>&nbsp;beg,&nbsp;<span class="keyword">int</span>&nbsp;end)&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;mid;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(beg&lt;end)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mid&nbsp;=&nbsp;(beg+end)/<span class="number">2</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mergeSort(a,beg,mid);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mergeSort(a,mid+<span class="number">1</span>,end);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;merge(a,beg,mid,end);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;merge(<span class="keyword">int</span>&nbsp;a[],&nbsp;<span class="keyword">int</span>&nbsp;beg,&nbsp;<span class="keyword">int</span>&nbsp;mid,&nbsp;<span class="keyword">int</span>&nbsp;end)&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;i=beg,j=mid+<span class="number">1</span>,k,index&nbsp;=&nbsp;beg;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;temp[<span class="number">10</span>];&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(i&lt;=mid&nbsp;&amp;&amp;&nbsp;j&lt;=end)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(a[i]&lt;a[j])&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp[index]&nbsp;=&nbsp;a[i];&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;=&nbsp;i+<span class="number">1</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp[index]&nbsp;=&nbsp;a[j];&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j&nbsp;=&nbsp;j+<span class="number">1</span>;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index++;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(i&gt;mid)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(j&lt;=end)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp[index]&nbsp;=&nbsp;a[j];&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index++;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j++;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(i&lt;=mid)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp[index]&nbsp;=&nbsp;a[i];&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index++;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;k&nbsp;=&nbsp;beg;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(k&lt;index)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[k]=temp[k];&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k++;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>printing the sorted elements 
+
+7
+9
+10
+12
+23
+23
+34
+44
+78
+101
+</pre>
+</div>
+<h2 class="h3">Java Program</h2>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;MyMergeSort&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;merge(<span class="keyword">int</span>&nbsp;arr[],&nbsp;<span class="keyword">int</span>&nbsp;beg,&nbsp;<span class="keyword">int</span>&nbsp;mid,&nbsp;<span class="keyword">int</span>&nbsp;end)&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;l&nbsp;=&nbsp;mid&nbsp;-&nbsp;beg&nbsp;+&nbsp;<span class="number">1</span>;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">int</span>&nbsp;r&nbsp;=&nbsp;end&nbsp;-&nbsp;mid;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">intLeftArray[]&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;<span class="keyword">int</span>&nbsp;[l];&nbsp;&nbsp;</li>
+<li class="">intRightArray[]&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;<span class="keyword">int</span>&nbsp;[r];&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">for</span>&nbsp;(<span class="keyword">int</span>&nbsp;i=<span class="number">0</span>;&nbsp;i&lt;l;&nbsp;++i)&nbsp;&nbsp;</li>
+<li class="alt">LeftArray[i]&nbsp;=&nbsp;arr[beg&nbsp;+&nbsp;i];&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">for</span>&nbsp;(<span class="keyword">int</span>&nbsp;j=<span class="number">0</span>;&nbsp;j&lt;r;&nbsp;++j)&nbsp;&nbsp;</li>
+<li class="">RightArray[j]&nbsp;=&nbsp;arr[mid&nbsp;+&nbsp;<span class="number">1</span>+&nbsp;j];&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">int</span>&nbsp;i&nbsp;=&nbsp;<span class="number">0</span>,&nbsp;j&nbsp;=&nbsp;<span class="number">0</span>;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;k&nbsp;=&nbsp;beg;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">while</span>&nbsp;(i&lt;l&amp;&amp;j&lt;r)&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">if</span>&nbsp;(LeftArray[i]&nbsp;&lt;=&nbsp;RightArray[j])&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">arr[k]&nbsp;=&nbsp;LeftArray[i];&nbsp;&nbsp;</li>
+<li class="">i++;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">else</span>&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class="">arr[k]&nbsp;=&nbsp;RightArray[j];&nbsp;&nbsp;</li>
+<li class="alt">j++;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">k++;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">while</span>&nbsp;(i&lt;l)&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">arr[k]&nbsp;=&nbsp;LeftArray[i];&nbsp;&nbsp;</li>
+<li class="">i++;&nbsp;&nbsp;</li>
+<li class="alt">k++;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">while</span>&nbsp;(j&lt;r)&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class="">arr[k]&nbsp;=&nbsp;RightArray[j];&nbsp;&nbsp;</li>
+<li class="alt">j++;&nbsp;&nbsp;</li>
+<li class="">k++;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">void</span>&nbsp;sort(<span class="keyword">int</span>&nbsp;arr[],&nbsp;<span class="keyword">int</span>&nbsp;beg,&nbsp;<span class="keyword">int</span>&nbsp;end)&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">if</span>&nbsp;(beg&lt;end)&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;mid&nbsp;=&nbsp;(beg+end)/<span class="number">2</span>;&nbsp;&nbsp;</li>
+<li class="alt">sort(arr,&nbsp;beg,&nbsp;mid);&nbsp;&nbsp;</li>
+<li class="">sort(arr&nbsp;,&nbsp;mid+<span class="number">1</span>,&nbsp;end);&nbsp;&nbsp;</li>
+<li class="alt">merge(arr,&nbsp;beg,&nbsp;mid,&nbsp;end);&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String&nbsp;args[])&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class="">intarr[]&nbsp;=&nbsp;{<span class="number">90</span>,<span class="number">23</span>,<span class="number">101</span>,<span class="number">45</span>,<span class="number">65</span>,<span class="number">23</span>,<span class="number">67</span>,<span class="number">89</span>,<span class="number">34</span>,<span class="number">23</span>};&nbsp;&nbsp;</li>
+<li class="alt">MyMergeSort&nbsp;ob&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;MyMergeSort();&nbsp;&nbsp;</li>
+<li class="">ob.sort(arr,&nbsp;<span class="number">0</span>,&nbsp;arr.length-<span class="number">1</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">System.out.println(<span class="string">"\nSorted&nbsp;array"</span>);&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i&nbsp;=<span class="number">0</span>;&nbsp;i&lt;arr.length;i++)&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(arr[i]+<span class="string">""</span>);&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Sorted array 
+23
+23
+23
+34
+45
+65
+67
+89
+90
+101</pre>
+</div>

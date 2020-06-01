@@ -1,0 +1,365 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<h1>Python <span class="color_h1">Dictionaries</span></h1>
+
+<hr>
+
+
+<h2>Dictionary</h2>
+
+<p>A dictionary is a collection which is unordered, changeable and indexed. In Python dictionaries are written with curly brackets, and 
+they have keys and values.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Create and print a dictionary:</p>
+<div class="w3-code notranslate pythonHigh">
+thisdict =	{<br>
+&nbsp;&nbsp;"brand": "Ford",<br>
+&nbsp;&nbsp;"model": "Mustang&quot;,<br>
+&nbsp;&nbsp;"year": 1964<br>
+}<br>
+print(thisdict)<br>
+</div>
+
+</div>
+
+<hr>
+
+<h2>Accessing Items</h2>
+
+<p>You can access the items of a dictionary by referring to its key name, inside 
+square brackets:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Get the value of the &quot;model&quot; key:</p>
+<div class="w3-code notranslate pythonHigh">
+  x = thisdict[&quot;model&quot;]<br>
+</div>
+
+</div>
+
+<p>There is also a method called <code class="w3-codespan">get()</code> that will give you the same result:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Get the value of the &quot;model&quot; key:</p>
+<div class="w3-code notranslate pythonHigh">
+  x = thisdict.get(&quot;model&quot;)<br>
+</div>
+
+</div>
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+
+  <!--<pre>mid_content, all: [300,250][336,280][728,90][970,250][970,90][320,50][468,60]</pre>-->
+  <div id="snhb-mid_content-0"></div>
+    
+</div>
+<hr>
+
+
+<h2>Change Values</h2>
+
+<p>You can change the value of a specific item by referring to its key name:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Change the &quot;year&quot; to 2018:</p>
+<div class="w3-code notranslate pythonHigh">
+thisdict =	{<br>
+&nbsp;&nbsp;"brand": "Ford",<br>
+&nbsp;&nbsp;"model": "Mustang",<br>
+&nbsp;&nbsp;"year": 1964<br>
+}<br>thisdict[&quot;year&quot;] = 2018<br>
+</div>
+
+</div>
+
+<hr>
+
+<h2>Loop Through a Dictionary</h2>
+
+<p>You can loop through a dictionary by using a
+<code class="w3-codespan">for</code> loop.</p>
+<p>When looping through a dictionary, the return value are the <em>keys</em> of 
+the dictionary, but there are methods to return the <em>values</em> as well.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Print all key names in the dictionary, one by one:</p>
+<div class="w3-code notranslate pythonHigh">
+  for x in thisdict:<br>&nbsp; print(x)</div>
+
+</div>
+
+<div class="w3-example">
+  <h3>Example</h3>
+<p>Print all <em>values</em> in the dictionary, one by one:</p>
+<div class="w3-code notranslate pythonHigh">
+  for x in thisdict:<br>&nbsp; print(thisdict[x])</div>
+
+</div>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>You can also use the <code class="w3-codespan">values()</code> function to 
+return values of a dictionary:</p>
+<div class="w3-code notranslate pythonHigh">
+  for x in thisdict.values():<br>&nbsp; print(x)</div>
+
+</div>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Loop through both <em>keys</em> and <em>values</em>, by using the
+<code class="w3-codespan">items()</code> function:</p>
+<div class="w3-code notranslate pythonHigh">
+  for x, y in thisdict.items():<br>&nbsp; print(x, y)</div>
+
+</div>
+
+<hr>
+<h2>Check if Key Exists</h2>
+
+<p>To determine if a specified key is present in a dictionary use the <code class="w3-codespan">in</code> keyword:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Check if "model" is present in the dictionary:</p>
+<div class="w3-code notranslate pythonHigh">
+thisdict =	{<br>
+&nbsp;&nbsp;"brand": "Ford",<br>
+&nbsp;&nbsp;"model": "Mustang",<br>
+&nbsp;&nbsp;"year": 1964<br>
+}<br>
+  if &quot;model&quot; in thisdict:<br>&nbsp; print(&quot;Yes, 'model' is 
+  one of the keys in the thisdict dictionary&quot;)</div>
+
+</div>
+
+<hr>
+
+<h2>Dictionary Length</h2>
+
+<p>To determine how many items (key-value pairs) a dictionary has, use the <code class="w3-codespan">len()</code> method.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Print the number of items in the dictionary:</p>
+<div class="w3-code notranslate pythonHigh">
+  print(len(thisdict))</div>
+
+</div>
+
+<hr>
+<h2>Adding Items</h2>
+
+<p>Adding an item to the dictionary is done by using a new index key and assigning a value to it:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate pythonHigh">
+thisdict =	{<br>
+&nbsp;&nbsp;"brand": "Ford",<br>
+&nbsp;&nbsp;"model": "Mustang",<br>
+&nbsp;&nbsp;"year": 1964<br>
+}<br>thisdict[&quot;color&quot;] = &quot;red&quot;<br>print(thisdict)<br>
+</div>
+
+</div>
+
+<hr>
+<h2>Removing Items</h2>
+
+<p>There are several methods to remove items from a dictionary:</p>
+
+
+<div class="w3-example">
+<h3>Example</h3>
+  <p>The <code class="w3-codespan">pop()</code> method removes the item with the specified key name:</p>
+<div class="w3-code notranslate pythonHigh">
+thisdict =	{<br>
+&nbsp;&nbsp;"brand": "Ford",<br>
+&nbsp;&nbsp;"model": "Mustang",<br>
+&nbsp;&nbsp;"year": 1964<br>
+}<br>thisdict.pop(&quot;model&quot;)<br>
+  print(thisdict)</div>
+
+</div>
+
+<div class="w3-example">
+<h3>Example</h3>
+  <p>The <code class="w3-codespan">popitem()</code> method removes the last 
+  inserted item (in versions before 3.7, a random item is removed instead):</p>
+<div class="w3-code notranslate pythonHigh">
+thisdict =	{<br>
+&nbsp;&nbsp;"brand": "Ford",<br>
+&nbsp;&nbsp;"model": "Mustang",<br>
+&nbsp;&nbsp;"year": 1964<br>
+}<br>thisdict.popitem()<br>
+  print(thisdict)</div>
+
+</div>
+
+<div class="w3-example">
+<h3>Example</h3>
+  <p>The <code class="w3-codespan">del</code> keyword removes the item with the specified 
+  key name:</p>
+<div class="w3-code notranslate pythonHigh">
+thisdict =	{<br>
+&nbsp;&nbsp;"brand": "Ford",<br>
+&nbsp;&nbsp;"model": "Mustang",<br>
+&nbsp;&nbsp;"year": 1964<br>
+}<br>del thisdict[&quot;model&quot;]<br>print(thisdict)</div>
+
+</div>
+
+<div class="w3-example w3-pale-red">
+<h3>Example</h3>
+  <p>The <code class="w3-codespan">del</code> keyword can also delete the 
+  dictionary completely:</p>
+<div class="w3-code notranslate pythonHigh">
+thisdict =	{<br>
+&nbsp;&nbsp;"brand": "Ford",<br>
+&nbsp;&nbsp;"model": "Mustang",<br>
+&nbsp;&nbsp;"year": 1964<br>
+}<br>del thisdict<br>print(thisdict) #this will cause an error because &quot;thisdict&quot; 
+  no longer exists.</div>
+
+</div>
+
+<div class="w3-example">
+<h3>Example</h3>
+  <p>The <code class="w3-codespan">clear()</code> keyword empties the 
+  dictionary:</p>
+<div class="w3-code notranslate pythonHigh">
+thisdict =	{<br>
+&nbsp;&nbsp;"brand": "Ford",<br>
+&nbsp;&nbsp;"model": "Mustang",<br>
+&nbsp;&nbsp;"year": 1964<br>
+}<br>thisdict.clear()<br>print(thisdict)</div>
+
+</div>
+
+<hr>
+
+<h2>Copy a Dictionary</h2>
+<p>You cannot copy a dictionary simply by typing <code class="w3-codespan">dict2 = 
+dict1</code>, because: <code class="w3-codespan">dict2</code> will only be a <em>
+reference</em> to <code class="w3-codespan">dict1</code>, and changes made in
+<code class="w3-codespan">dict1</code> will automatically also be made in
+<code class="w3-codespan">dict2</code>.</p>
+
+<p>There are ways to make a copy, one way is to use the built-in Dictionary 
+method <code class="w3-codespan">
+copy()</code>.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Make a copy of a dictionary with the <code class="w3-codespan">copy()</code> method:</p>
+<div class="w3-code notranslate pythonHigh">
+thisdict =	{<br>
+&nbsp;&nbsp;"brand": "Ford",<br>
+&nbsp;&nbsp;"model": "Mustang",<br>
+&nbsp;&nbsp;"year": 1964<br>
+}<br>mydict 
+  = thisdict.copy()<br>
+  print(mydict)
+</div>
+
+</div>
+
+<p>Another way to make a copy is to use the built-in method 
+<code class="w3-codespan">dict()</code>.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Make a copy of a dictionary with the <code class="w3-codespan">dict()</code> method:</p>
+<div class="w3-code notranslate pythonHigh">
+thisdict =	{<br>
+&nbsp;&nbsp;"brand": "Ford",<br>
+&nbsp;&nbsp;"model": "Mustang",<br>
+&nbsp;&nbsp;"year": 1964<br>
+}<br>mydict 
+  = dict(thisdict)<br>
+  print(mydict)</div>
+
+</div>
+
+<hr>
+
+<h2>Nested Dictionaries</h2>
+<p>A dictionary can also contain many dictionaries, this is called nested 
+dictionaries.</p>
+<div class="w3-example">
+  <h3>Example</h3>
+<p>Create a dictionary that contain three dictionaries:</p>
+<div class="w3-code notranslate pythonHigh">
+  myfamily = {<br>&nbsp; &quot;child1&quot; : {<br>&nbsp;&nbsp;&nbsp; &quot;name&quot; : &quot;Emil&quot;,<br>
+  &nbsp;&nbsp;&nbsp; &quot;year&quot; : 2004<br>&nbsp; },<br>&nbsp; &quot;child2&quot; : {<br>&nbsp;&nbsp;&nbsp; 
+  &quot;name&quot; : &quot;Tobias&quot;,<br>&nbsp;&nbsp;&nbsp; &quot;year&quot; : 2007<br>&nbsp; },<br>&nbsp; 
+  &quot;child3&quot; : {<br>&nbsp;&nbsp;&nbsp; &quot;name&quot; : &quot;Linus&quot;,<br>
+  &nbsp;&nbsp;&nbsp; &quot;year&quot; : 2011<br>&nbsp; }<br>} </div>
+
+</div>
+
+<p>Or, if you want to nest three dictionaries that already exists as 
+dictionaries:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Create three dictionaries, than create one dictionary that will contain the 
+other three dictionaries:</p>
+<div class="w3-code notranslate pythonHigh">
+  child1 = {<br>&nbsp; &quot;name&quot; : &quot;Emil&quot;,<br>&nbsp; &quot;year&quot; : 2004<br>}<br>child2 = {<br>&nbsp; 
+  &quot;name&quot; : &quot;Tobias&quot;,<br>&nbsp; &quot;year&quot; : 2007<br>}<br>child3 = {<br>&nbsp; &quot;name&quot; : &quot;Linus&quot;,<br>&nbsp; 
+  &quot;year&quot; : 2011<br>}<br><br>myfamily = {<br>&nbsp; &quot;child1&quot; : child1,<br>&nbsp; 
+  &quot;child2&quot; : child2,<br>&nbsp; &quot;child3&quot; : child3<br>}</div>
+
+</div>
+
+<hr>
+
+<h2>The dict() Constructor</h2>
+
+<p>It is also possible to use the <span class="w3-codespan">dict()</span> constructor to make a 
+new dictionary:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate pythonHigh">
+thisdict =	dict(brand="Ford", model="Mustang", year=1964)<br>
+# note that keywords are not string literals<br>
+# note the use of equals rather than colon for the assignment<br>
+print(thisdict)<br>
+</div>
+
+</div>
+<hr>
+<h2>Dictionary Methods</h2>
+
+<p>Python has a set of built-in methods that you can use on dictionaries.</p>
+
+<table class="w3-table-all notranslate">
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr><td>clear()</td><td>Removes all the elements from the dictionary</td></tr>
+<tr><td>copy()</td><td>Returns a copy of the dictionary</td></tr>
+<tr><td>fromkeys()</td><td>Returns a dictionary with the specified keys and values</td></tr>
+<tr><td>get()</td><td>Returns the value of the specified key</td></tr>
+<tr><td>items()</td><td>Returns a list containing a tuple for each key value pair</td></tr>
+<tr><td>keys()</td><td>Returns a list containing the dictionary's keys</td></tr>
+<tr><td>pop()</td><td>Removes the element with the specified key</td></tr>
+<tr><td>popitem()</td><td>Removes the last 
+  inserted key-value pair</td></tr>
+<tr><td>setdefault()</td><td>Returns the value of the specified key. If the key does not exist: insert the key, with the specified value</td></tr>
+<tr><td>update()</td><td>Updates the dictionary with the specified key-value pairs</td></tr>
+<tr><td>values()</td><td>Returns a list of all the values in the dictionary</td></tr>
+</table>
+<hr>

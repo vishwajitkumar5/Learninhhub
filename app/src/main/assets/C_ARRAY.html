@@ -1,0 +1,58 @@
+<h1 style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;C ARRAY</h1>
+<h1 class="h1">C Array</h1>
+<p>An array is defined as the collection of similar type of data items stored at contiguous memory locations. Arrays are the derived data type in C programming language which can store the primitive type of data such as int, char, double, float, etc. It also has the capability to store the collection of derived data types, such as pointers, structure, etc. The array is the simplest data structure where each data element can be randomly accessed by using its index number.</p>
+<p>C array is beneficial if you have to store similar elements. For example, if we want to store the marks of a student in 6 subjects, then we don't need to define different variables for the marks in the different subject. Instead of that, we can define an array which can store the marks in each subject at the contiguous memory locations.</p>
+<p>By using the array, we can access the elements easily. Only a few lines of code are required to access the elements of the array.</p>
+<hr />
+<h4 class="h4">Properties of Array</h4>
+<p>The array contains the following properties.</p>
+<ul class="points">
+<li>Each element of an array is of same data type and carries the same size, i.e., int = 4 bytes.</li>
+<li>Elements of the array are stored at contiguous memory locations where the first element is stored at the smallest memory location.</li>
+<li>Elements of the array can be randomly accessed since we can calculate the address of each element of the array with the given base address and the size of the data element.</li>
+</ul>
+<hr />
+<h4 class="h4">Advantage of C Array</h4>
+<p><strong>1) Code Optimization</strong>: Less code to the access the data.</p>
+<p><strong>2) Ease of traversing</strong>: By using the for loop, we can retrieve the elements of an array easily.</p>
+<p><strong>3) Ease of sorting</strong>: To sort the elements of the array, we need a few lines of code only.</p>
+<p><strong>4) Random Access</strong>: We can access any element randomly using the array.</p>
+<hr />
+<h4 class="h4">Disadvantage of C Array</h4>
+<p><strong>1) Fixed Size</strong>: Whatever size, we define at the time of declaration of the array, we can't exceed the limit. So, it doesn't grow the size dynamically like LinkedList which we will learn later.</p>
+<hr />
+<h2 class="h2">Declaration of C Array</h2>
+<p>We can declare an array in the c language in the following way.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt">data_type&nbsp;array_name[array_size];&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Now, let us see the example to declare the array.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="datatypes">int</span>&nbsp;marks[5];&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Here, int is the&nbsp;<em>data_type</em>, marks are the&nbsp;<em>array_name</em>, and 5 is the&nbsp;<em>array_size</em>.</p>
+<hr />
+<h2 class="h2">Initialization of C Array</h2>
+<p>The simplest way to initialize an array is by using the index of each element. We can initialize each element of the array by using the index. Consider the following example.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt">marks[0]=80;<span class="comment">//initialization&nbsp;of&nbsp;array</span>&nbsp;&nbsp;</li>
+<li class="">marks[1]=60;&nbsp;&nbsp;</li>
+<li class="alt">marks[2]=70;&nbsp;&nbsp;</li>
+<li class="">marks[3]=85;&nbsp;&nbsp;</li>
+<li class="alt">marks[4]=75;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>

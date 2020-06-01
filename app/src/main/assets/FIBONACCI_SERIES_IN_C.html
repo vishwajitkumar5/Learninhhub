@@ -1,0 +1,72 @@
+<h1 class="h1" style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp;Fibonacci Series in C</h1>
+<p><strong>Fibonacci Series</strong>&nbsp;in C: In case of fibonacci series,&nbsp;<em>next number is the sum of previous two numbers</em>&nbsp;for example 0, 1, 1, 2, 3, 5, 8, 13, 21 etc. The first two numbers of fibonacci series are 0 and 1.</p>
+<p>There are two ways to write the fibonacci series program:</p>
+<ul class="points">
+<li>Fibonacci Series without recursion</li>
+<li>Fibonacci Series using recursion</li>
+</ul>
+<h2 class="h2">Fibonacci Series in C without recursion</h2>
+<p>Let's see the fibonacci series program in c without recursion.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="preprocessor">#include&lt;stdio.h&gt;&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class=""><span class="datatypes">int</span>&nbsp;main()&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="datatypes">int</span>&nbsp;n1=0,n2=1,n3,i,number;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;printf(<span class="string">"Enter&nbsp;the&nbsp;number&nbsp;of&nbsp;elements:"</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;scanf(<span class="string">"%d"</span>,&amp;number);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;printf(<span class="string">"\n%d&nbsp;%d"</span>,n1,n2);<span class="comment">//printing&nbsp;0&nbsp;and&nbsp;1&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;<span class="keyword">for</span>(i=2;i&lt;number;++i)<span class="comment">//loop&nbsp;starts&nbsp;from&nbsp;2&nbsp;because&nbsp;0&nbsp;and&nbsp;1&nbsp;are&nbsp;already&nbsp;printed&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;n3=n1+n2;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;printf(<span class="string">"&nbsp;%d"</span>,n3);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;n1=n2;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;n2=n3;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;0;&nbsp;&nbsp;</li>
+<li class="">&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>Enter the number of elements:15
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 
+</pre>
+</div>
+<h2 class="h2">Fibonacci Series using recursion in C</h2>
+<p>Let's see the fibonacci series program in c using recursion.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="preprocessor">&nbsp;#include&lt;stdio.h&gt;&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">void</span>&nbsp;printFibonacci(<span class="datatypes">int</span>&nbsp;n){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">static</span>&nbsp;<span class="datatypes">int</span>&nbsp;n1=0,n2=1,n3;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(n&gt;0){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n3&nbsp;=&nbsp;n1&nbsp;+&nbsp;n2;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n1&nbsp;=&nbsp;n2;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n2&nbsp;=&nbsp;n3;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"%d&nbsp;"</span>,n3);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printFibonacci(n-1);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="datatypes">int</span>&nbsp;main(){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span>&nbsp;n;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"Enter&nbsp;the&nbsp;number&nbsp;of&nbsp;elements:&nbsp;"</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;scanf(<span class="string">"%d"</span>,&amp;n);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"Fibonacci&nbsp;Series:&nbsp;"</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"%d&nbsp;%d&nbsp;"</span>,0,1);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;printFibonacci(n-2);<span class="comment">//n-2&nbsp;because&nbsp;2&nbsp;numbers&nbsp;are&nbsp;already&nbsp;printed&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;0;&nbsp;&nbsp;</li>
+<li class="">&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>Enter the number of elements:15
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 </pre>
+</div>

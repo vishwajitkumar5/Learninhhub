@@ -1,0 +1,261 @@
+<h1 class="h1" style="text-align: center;">Insertion Sort</h1>
+<p>Insertion sort is the simple sorting algorithm which is commonly used in the daily lives while ordering a deck of cards. In this algorithm, we insert each element onto its proper place in the sorted array. This is less efficient than the other sort algorithms like quick sort, merge sort, etc.</p>
+<h2 class="h2">Technique</h2>
+<p>Consider an array A whose elements are to be sorted. Initially, A[0] is the only element on the sorted set. In pass 1, A[1] is placed at its proper index in the array.</p>
+<p>In pass 2, A[2] is placed at its proper index in the array. Likewise, in pass n-1, A[n-1] is placed at its proper index into the array.</p>
+<p>To insert an element A[k] to its proper index, we must compare it with all other elements i.e. A[k-1], A[k-2], and so on until we find an element A[j] such that, A[j]&lt;=A[k].</p>
+<p>All the elements from A[k-1] to A[j] need to be shifted and A[k] will be moved to A[j+1].</p>
+<h2 class="h2">Complexity</h2>
+<table class="alt">
+<tbody>
+<tr>
+<th>Complexity</th>
+<th>Best Case</th>
+<th>Average Case</th>
+<th>Worst Case</th>
+</tr>
+<tr>
+<td>Time</td>
+<td>&Omega;(n)</td>
+<td>&theta;(n<sup>2</sup>)</td>
+<td>o(n<sup>2</sup>)</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>o(1)</td>
+</tr>
+</tbody>
+</table>
+<h2 class="h2">Algorithm</h2>
+<ul class="points">
+<li><strong>Step 1</strong>: Repeat Steps 2 to 5 for K = 1 to N-1</li>
+<li><strong>Step 2</strong>: SET TEMP = ARR[K]</li>
+<li><strong>Step 3</strong>: SET J = K - 1</li>
+<li><strong>Step 4</strong>: Repeat while TEMP &lt;=ARR[J]<br />SET ARR[J + 1] = ARR[J]<br />SET J = J - 1<br />[END OF INNER LOOP]</li>
+<li><strong>Step 5</strong>: SET ARR[J + 1] = TEMP<br />[END OF LOOP]</li>
+<li><strong>Step 6</strong>: EXIT</li>
+</ul>
+<h2 class="h2">C Program</h2>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="preprocessor">#include&lt;stdio.h&gt;</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">void</span>&nbsp;main&nbsp;()&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span>&nbsp;i,j,&nbsp;k,temp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span>&nbsp;a[10]&nbsp;=&nbsp;{&nbsp;10,&nbsp;9,&nbsp;7,&nbsp;101,&nbsp;23,&nbsp;44,&nbsp;12,&nbsp;78,&nbsp;34,&nbsp;23};&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"\nprinting&nbsp;sorted&nbsp;elements...\n"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(k=1;&nbsp;k&lt;10;&nbsp;k++)&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp&nbsp;=&nbsp;a[k];&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j=&nbsp;k-1;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(j&gt;=0&nbsp;&amp;&amp;&nbsp;temp&nbsp;&lt;=&nbsp;a[j])&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[j+1]&nbsp;=&nbsp;a[j];&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j&nbsp;=&nbsp;j-1;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[j+1]&nbsp;=&nbsp;temp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(i=0;i&lt;10;i++)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"\n%d\n"</span>,a[i]);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Printing Sorted Elements . . . 
+7
+9
+10
+12
+23
+23
+34
+44
+78 
+101 
+</pre>
+</div>
+<hr />
+<h2 class="h2">C++ Program</h2>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="preprocessor">#include&lt;iostream&gt;</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">using</span>&nbsp;<span class="keyword">namespace</span>&nbsp;std;&nbsp;&nbsp;</li>
+<li class="alt"><span class="datatypes">int</span>&nbsp;main&nbsp;()&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span>&nbsp;i,j,&nbsp;k,temp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span>&nbsp;a[10]&nbsp;=&nbsp;{&nbsp;10,&nbsp;9,&nbsp;7,&nbsp;101,&nbsp;23,&nbsp;44,&nbsp;12,&nbsp;78,&nbsp;34,&nbsp;23};&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;cout&lt;&lt;<span class="string">"\nprinting&nbsp;sorted&nbsp;elements...\n"</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(k=1;&nbsp;k&lt;10;&nbsp;k++)&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp&nbsp;=&nbsp;a[k];&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j=&nbsp;k-1;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(j&gt;=0&nbsp;&amp;&amp;&nbsp;temp&nbsp;&lt;=&nbsp;a[j])&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[j+1]&nbsp;=&nbsp;a[j];&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j&nbsp;=&nbsp;j-1;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[j+1]&nbsp;=&nbsp;temp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(i=0;i&lt;10;i++)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;a[i]&lt;&lt;<span class="string">"\n"</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>printing sorted elements...
+7
+9
+10
+12
+23
+23
+34
+44
+78
+101
+</pre>
+</div>
+<hr />
+<h2 class="h2">Java Program</h2>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;InsertionSort&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>[]&nbsp;a&nbsp;=&nbsp;{<span class="number">10</span>,&nbsp;<span class="number">9</span>,&nbsp;<span class="number">7</span>,&nbsp;<span class="number">101</span>,&nbsp;<span class="number">23</span>,&nbsp;<span class="number">44</span>,&nbsp;<span class="number">12</span>,&nbsp;<span class="number">78</span>,&nbsp;<span class="number">34</span>,&nbsp;<span class="number">23</span>};&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;k=<span class="number">1</span>;&nbsp;k&lt;<span class="number">10</span>;&nbsp;k++)&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;temp&nbsp;=&nbsp;a[k];&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;j=&nbsp;k-<span class="number">1</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(j&gt;=<span class="number">0</span>&nbsp;&amp;&amp;&nbsp;temp&nbsp;&lt;=&nbsp;a[j])&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[j+<span class="number">1</span>]&nbsp;=&nbsp;a[j];&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j&nbsp;=&nbsp;j-<span class="number">1</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[j+<span class="number">1</span>]&nbsp;=&nbsp;temp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"printing&nbsp;sorted&nbsp;elements&nbsp;..."</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(a[i]);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Printing sorted elements . . . 
+7
+9
+10
+12
+23
+23
+34
+44
+78 
+101 
+</pre>
+</div>
+<hr />
+<h2 class="h2">C# Program</h2>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-c" start="1">
+<li class="alt"><span class="keyword">using</span>&nbsp;System;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;Program&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;Main()&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;i,j,&nbsp;k,temp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>[]&nbsp;a&nbsp;=&nbsp;{&nbsp;10,&nbsp;9,&nbsp;7,&nbsp;101,&nbsp;23,&nbsp;44,&nbsp;12,&nbsp;78,&nbsp;34,&nbsp;23};&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="string">"\nprinting&nbsp;sorted&nbsp;elements...\n"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(k=1;&nbsp;k&lt;10;&nbsp;k++)&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp&nbsp;=&nbsp;a[k];&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j=&nbsp;k-1;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(j&gt;=0&nbsp;&amp;&amp;&nbsp;temp&nbsp;&lt;=&nbsp;a[j])&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[j+1]&nbsp;=&nbsp;a[j];&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j&nbsp;=&nbsp;j-1;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[j+1]&nbsp;=&nbsp;temp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(i=0;i&lt;10;i++)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(a[i]);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>printing sorted elements . . . 
+7
+9
+10
+12
+23
+23
+34
+44
+78 
+101 
+</pre>
+</div>
+<hr />
+<h2 class="h2">Python Program</h2>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-py" start="1">
+<li class="alt">a=[<span class="number">10</span>,&nbsp;<span class="number">9</span>,&nbsp;<span class="number">7</span>,&nbsp;<span class="number">101</span>,&nbsp;<span class="number">23</span>,&nbsp;<span class="number">44</span>,&nbsp;<span class="number">12</span>,&nbsp;<span class="number">78</span>,&nbsp;<span class="number">34</span>,&nbsp;<span class="number">23</span>]&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">for</span>&nbsp;k&nbsp;<span class="keyword">in</span>&nbsp;range(<span class="number">1</span>,<span class="number">10</span>):&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;temp&nbsp;=&nbsp;a[k]&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;j&nbsp;=&nbsp;k-<span class="number">1</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>&nbsp;j&gt;=<span class="number">0</span>&nbsp;<span class="keyword">and</span>&nbsp;temp&nbsp;&lt;=a[j]:&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[j+<span class="number">1</span>]=a[j]&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j&nbsp;=&nbsp;j-<span class="number">1</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;a[j+<span class="number">1</span>]&nbsp;=&nbsp;temp&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">print</span>(<span class="string">"printing&nbsp;sorted&nbsp;elements..."</span>)&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">for</span>&nbsp;i&nbsp;<span class="keyword">in</span>&nbsp;a:&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(i)&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>printing sorted elements . . . 
+7
+9
+10
+12
+23
+23
+34
+44
+78 
+101 </pre>
+</div>

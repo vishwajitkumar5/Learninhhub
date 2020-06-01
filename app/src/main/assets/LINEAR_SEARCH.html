@@ -1,0 +1,125 @@
+<h2 class="h2" style="text-align: center;">Linear Search</h2>
+<p>Linear search is the simplest search algorithm and often called sequential search. In this type of searching, we simply traverse the list completely and match each element of the list with the item whose location is to be found. If the match found then location of the item is returned otherwise the algorithm return NULL.</p>
+<p>Linear search is mostly used to search an unordered list in which the items are not sorted. The algorithm of linear search is given as follows.</p>
+<h2 class="h2">Algorithm</h2>
+<ul class="points">
+<li>LINEAR_SEARCH(A, N, VAL)</li>
+<li><strong>Step 1:</strong>&nbsp;[INITIALIZE] SET POS = -1</li>
+<li><strong>Step 2:</strong>&nbsp;[INITIALIZE] SET I = 1</li>
+<li><strong>Step 3:</strong>&nbsp;Repeat Step 4 while I&lt;=N</li>
+<li><strong>Step 4:</strong>&nbsp;IF A[I] = VAL<br />SET POS = I<br />PRINT POS<br />Go to Step 6<br />[END OF IF]<br />SET I = I + 1<br />[END OF LOOP]</li>
+<li><strong>Step 5:</strong>&nbsp;IF POS = -1<br />PRINT " VALUE IS NOT PRESENTIN THE ARRAY "<br />[END OF IF]</li>
+<li><strong>Step 6:</strong>&nbsp;EXIT</li>
+</ul>
+<h3 class="h3">Complexity of algorithm</h3>
+<table class="alt">
+<tbody>
+<tr>
+<th>Complexity</th>
+<th>Best Case</th>
+<th>Average Case</th>
+<th>Worst Case</th>
+</tr>
+<tr>
+<td>Time</td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<h2 class="h2">C Program</h2>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">#include&lt;stdio.h&gt;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">void</span>&nbsp;main&nbsp;()&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;a[<span class="number">10</span>]&nbsp;=&nbsp;{<span class="number">10</span>,&nbsp;<span class="number">23</span>,&nbsp;<span class="number">40</span>,&nbsp;<span class="number">1</span>,&nbsp;<span class="number">2</span>,&nbsp;<span class="number">0</span>,&nbsp;<span class="number">14</span>,&nbsp;<span class="number">13</span>,&nbsp;<span class="number">50</span>,&nbsp;<span class="number">9</span>};&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;item,&nbsp;i,flag;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"\nEnter&nbsp;Item&nbsp;which&nbsp;is&nbsp;to&nbsp;be&nbsp;searched\n"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;scanf(<span class="string">"%d"</span>,&amp;item);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(i&nbsp;=&nbsp;<span class="number">0</span>;&nbsp;i&lt;&nbsp;<span class="number">10</span>;&nbsp;i++)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(a[i]&nbsp;==&nbsp;item)&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flag&nbsp;=&nbsp;i+<span class="number">1</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flag&nbsp;=&nbsp;<span class="number">0</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(flag&nbsp;!=&nbsp;<span class="number">0</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"\nItem&nbsp;found&nbsp;at&nbsp;location&nbsp;%d\n"</span>,flag);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"\nItem&nbsp;not&nbsp;found\n"</span>);&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Enter Item which is to be searched
+20
+Item not found
+Enter Item which is to be searched
+23
+Item found at location 2 
+</pre>
+</div>
+<h3 class="h3">Java Program</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;java.util.Scanner;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;Leniear_Search&nbsp;{&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>[]&nbsp;arr&nbsp;=&nbsp;{<span class="number">10</span>,&nbsp;<span class="number">23</span>,&nbsp;<span class="number">15</span>,&nbsp;<span class="number">8</span>,&nbsp;<span class="number">4</span>,&nbsp;<span class="number">3</span>,&nbsp;<span class="number">25</span>,&nbsp;<span class="number">30</span>,&nbsp;<span class="number">34</span>,&nbsp;<span class="number">2</span>,&nbsp;<span class="number">19</span>};&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;item,flag=<span class="number">0</span>;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;Scanner&nbsp;sc&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Scanner(System.in);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Enter&nbsp;Item&nbsp;?"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;item&nbsp;=&nbsp;sc.nextInt();&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i&nbsp;=&nbsp;<span class="number">0</span>;&nbsp;i&lt;<span class="number">10</span>;&nbsp;i++)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(arr[i]==item)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flag&nbsp;=&nbsp;i+<span class="number">1</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flag&nbsp;=&nbsp;<span class="number">0</span>;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(flag&nbsp;!=&nbsp;<span class="number">0</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Item&nbsp;found&nbsp;at&nbsp;location"</span>&nbsp;+&nbsp;flag);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Item&nbsp;not&nbsp;found"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Enter Item ?
+23
+Item found at location 2
+Enter Item ?
+22
+Item not found</pre>
+</div>

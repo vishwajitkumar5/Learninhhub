@@ -1,0 +1,58 @@
+<h2 class="h1">&nbsp; &nbsp;Call by value and Call by reference in C</h2>
+<p>There are two methods to pass the data into the function in C language, i.e.,&nbsp;<em>call by value</em>&nbsp;and&nbsp;<em>call by reference</em>.</p>
+<p>&nbsp;</p>
+<h2 class="h2">Call by value in C</h2>
+<ul class="points">
+<li>In call by value method, the value of the actual parameters is copied into the formal parameters. In other words, we can say that the value of the variable is used in the function call in the call by value method.</li>
+<li>In call by value method, we can not modify the value of the actual parameter by the formal parameter.</li>
+<li>In call by value, different memory is allocated for actual and formal parameters since the value of the actual parameter is copied into the formal parameter.</li>
+<li>The actual parameter is the argument which is used in the function call whereas formal parameter is the argument which is used in the function definition.</li>
+</ul>
+<p>Let's try to understand the concept of call by value in c language by the example given below:</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="preprocessor">#include&lt;stdio.h&gt;</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">void</span>&nbsp;change(<span class="datatypes">int</span>&nbsp;num)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"Before&nbsp;adding&nbsp;value&nbsp;inside&nbsp;function&nbsp;num=%d&nbsp;\n"</span>,num);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;num=num+100;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"After&nbsp;adding&nbsp;value&nbsp;inside&nbsp;function&nbsp;num=%d&nbsp;\n"</span>,&nbsp;num);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="datatypes">int</span>&nbsp;main()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span>&nbsp;x=100;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"Before&nbsp;function&nbsp;call&nbsp;x=%d&nbsp;\n"</span>,&nbsp;x);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;change(x);<span class="comment">//passing&nbsp;value&nbsp;in&nbsp;function&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"After&nbsp;function&nbsp;call&nbsp;x=%d&nbsp;\n"</span>,&nbsp;x);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">return</span>&nbsp;0;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+<h2 class="h2">Call by reference in C</h2>
+<ul class="points">
+<li>In call by reference, the address of the variable is passed into the function call as the actual parameter.</li>
+<li>The value of the actual parameters can be modified by changing the formal parameters since the address of the actual parameters is passed.</li>
+<li>In call by reference, the memory allocation is similar for both formal parameters and actual parameters. All the operations in the function are performed on the value stored at the address of the actual parameters, and the modified value gets stored at the same address.</li>
+</ul>
+<p>Consider the following example for the call by reference.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="preprocessor">#include&lt;stdio.h&gt;</span>&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">void</span>&nbsp;change(<span class="datatypes">int</span>&nbsp;*num)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"Before&nbsp;adding&nbsp;value&nbsp;inside&nbsp;function&nbsp;num=%d&nbsp;\n"</span>,*num);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;(*num)&nbsp;+=&nbsp;100;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"After&nbsp;adding&nbsp;value&nbsp;inside&nbsp;function&nbsp;num=%d&nbsp;\n"</span>,&nbsp;*num);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="datatypes">int</span>&nbsp;main()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span>&nbsp;x=100;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"Before&nbsp;function&nbsp;call&nbsp;x=%d&nbsp;\n"</span>,&nbsp;x);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;change(&amp;x);<span class="comment">//passing&nbsp;reference&nbsp;in&nbsp;function&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"After&nbsp;function&nbsp;call&nbsp;x=%d&nbsp;\n"</span>,&nbsp;x);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">return</span>&nbsp;0;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;</li>
+</ol>
+</div>
+</div>
+</div>
+</div>

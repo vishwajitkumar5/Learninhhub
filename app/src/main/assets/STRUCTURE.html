@@ -1,0 +1,55 @@
+<h1 class="h1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Structure</h1>
+<p>A structure is a composite data type that defines a grouped list of variables that are to be placed under one name in a block of memory. It allows different variables to be accessed by using a single pointer to the structure.</p>
+<p><strong>Syntax</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">struct&nbsp;structure_name&nbsp;&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;data_type&nbsp;member1;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;data_type&nbsp;member2;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;data_type&nbsp;memeber;&nbsp;&nbsp;</li>
+<li class="">};&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<h3 class="h3">Advantages</h3>
+<ul class="points">
+<li>It can hold variables of different data types.</li>
+<li>We can create objects containing different types of attributes.</li>
+<li>It allows us to re-use the data layout across programs.</li>
+<li>It is used to implement other data structures like linked lists, stacks, queues, trees, graphs etc.</li>
+</ul>
+<p><strong>Program</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">#include&lt;stdio.h&gt;&nbsp;&nbsp;</li>
+<li class="">#include&lt;conio.h&gt;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;main(&nbsp;)&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">struct&nbsp;employee&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">int</span>&nbsp;id&nbsp;;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">float</span>&nbsp;salary&nbsp;;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">int</span>&nbsp;mobile&nbsp;;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;;&nbsp;&nbsp;</li>
+<li class="alt">struct&nbsp;employee&nbsp;e1,e2,e3&nbsp;;&nbsp;&nbsp;</li>
+<li class="">clrscr();&nbsp;&nbsp;</li>
+<li class="alt">printf&nbsp;(<span class="string">"\nEnter&nbsp;ids,&nbsp;salary&nbsp;&amp;&nbsp;mobile&nbsp;no.&nbsp;of&nbsp;3&nbsp;employee\n"</span>&nbsp;&nbsp;</li>
+<li class="">scanf&nbsp;(<span class="string">"%d&nbsp;%f&nbsp;%d"</span>,&nbsp;&amp;e1.id,&nbsp;&amp;e1.salary,&nbsp;&amp;e1.mobile);&nbsp;&nbsp;</li>
+<li class="alt">scanf&nbsp;(<span class="string">"%d%f&nbsp;%d"</span>,&nbsp;&amp;e2.id,&nbsp;&amp;e2.salary,&nbsp;&amp;e2.mobile);&nbsp;&nbsp;</li>
+<li class="">scanf&nbsp;(<span class="string">"%d&nbsp;%f&nbsp;%d"</span>,&nbsp;&amp;e3.id,&nbsp;&amp;e3.salary,&nbsp;&amp;e3.mobile);&nbsp;&nbsp;</li>
+<li class="alt">printf&nbsp;(<span class="string">"\n&nbsp;Entered&nbsp;Result&nbsp;"</span>);&nbsp;&nbsp;</li>
+<li class="">printf&nbsp;(<span class="string">"\n%d&nbsp;%f&nbsp;%d"</span>,&nbsp;e1.id,&nbsp;e1.salary,&nbsp;e1.mobile);&nbsp;&nbsp;</li>
+<li class="alt">printf&nbsp;(<span class="string">"\n%d%f&nbsp;%d"</span>,&nbsp;e2.id,&nbsp;e2.salary,&nbsp;e2.mobile);&nbsp;&nbsp;</li>
+<li class="">printf&nbsp;(<span class="string">"\n%d&nbsp;%f&nbsp;%d"</span>,&nbsp;e3.id,&nbsp;e3.salary,&nbsp;e3.mobile);&nbsp;&nbsp;</li>
+<li class="alt">getch();&nbsp;&nbsp;</li>
+<li class="">}&nbsp;</li>
+</ol>
+</div>
+</div>

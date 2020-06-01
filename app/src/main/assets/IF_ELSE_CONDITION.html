@@ -1,0 +1,59 @@
+<h1 class="h1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; C if else Statement&nbsp;</h1>
+<p>The if-else statement in C is used to perform the operations based on some specific condition. The operations specified in if block are executed if and only if the given condition is true.</p>
+<p>There are the following variants of if statement in C language.</p>
+<ul>
+<li>If statement</li>
+<li>If-else statement</li>
+<li>If else-if ladder</li>
+<li>Nested if</li>
+</ul>
+<h4 class="h2">If Statement</h4>
+<p>The if statement is used to check some given condition and perform some operations depending upon the correctness of that condition. It is mostly used in the scenario where we need to perform the different operations for the different conditions. The syntax of the if statement is given below.</p>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="keyword">if</span>(expression){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+<p>Let's see a simple example of C language if statement.</p>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="preprocessor">#include&lt;stdio.h&gt;&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class=""><span class="datatypes">int</span>&nbsp;main(){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="datatypes">int</span>&nbsp;number=0;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">printf(<span class="string">"Enter&nbsp;a&nbsp;number:"</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">scanf(<span class="string">"%d"</span>,&amp;number);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">if</span>(number%2==0){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">printf(<span class="string">"%d&nbsp;is&nbsp;even&nbsp;number"</span>,number);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">return</span>&nbsp;0;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+<p>&nbsp;</p>
+<h4 class="h2">&nbsp; &nbsp; If-else Statement</h4>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="keyword">if</span>(expression){&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed&nbsp;if&nbsp;condition&nbsp;is&nbsp;true</span>&nbsp;&nbsp;</li>
+<li class="alt">}<span class="keyword">else</span>{&nbsp;&nbsp;</li>
+<li class=""><span class="comment">//code&nbsp;to&nbsp;be&nbsp;executed&nbsp;if&nbsp;condition&nbsp;is&nbsp;false</span>&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+<p>Let's see the simple example to check whether a number is even or odd using if-else statement in C language.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="preprocessor">#include&lt;stdio.h&gt;&nbsp;&nbsp;</span>&nbsp;&nbsp;</li>
+<li class=""><span class="datatypes">int</span>&nbsp;main(){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="datatypes">int</span>&nbsp;number=0;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">printf(<span class="string">"enter&nbsp;a&nbsp;number:"</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">scanf(<span class="string">"%d"</span>,&amp;number);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">if</span>(number%2==0){&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">printf(<span class="string">"%d&nbsp;is&nbsp;even&nbsp;number"</span>,number);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">else</span>{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">printf(<span class="string">"%d&nbsp;is&nbsp;odd&nbsp;number"</span>,number);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">return</span>&nbsp;0;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>

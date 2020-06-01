@@ -1,0 +1,198 @@
+<h1 style="text-align: center;">Binary Search Tree</h1>
+<ol class="points">
+<li>Binary Search tree can be defined as a class of binary trees, in which the nodes are arranged in a specific order. This is also called ordered binary tree.</li>
+<li>In a binary search tree, the value of all the nodes in the left sub-tree is less than the value of the root.</li>
+<li>Similarly, value of all the nodes in the right sub-tree is greater than or equal to the value of the root.</li>
+<li>This rule will be recursively applied to all the left and right sub-trees of the root.</li>
+</ol>
+<p><br /><img src="https://static.javatpoint.com/ds/images/binary-search-tree.png" alt="Binary Search Tree" /></p>
+<p>A Binary search tree is shown in the above figure. As the constraint applied on the BST, we can see that the root node 30 doesn't contain any value greater than or equal to 30 in its left sub-tree and it also doesn't contain any value less than 30 in its right sub-tree.</p>
+<h2 class="h2">Advantages of using binary search tree</h2>
+<ol class="points">
+<li>Searching become very efficient in a binary search tree since, we get a hint at each step, about which sub-tree contains the desired element.</li>
+<li>The binary search tree is considered as efficient data structure in compare to arrays and linked lists. In searching process, it removes half sub-tree at every step. Searching for an element in a binary search tree takes o(log<sub>2</sub>n) time. In worst case, the time it takes to search an element is 0(n).</li>
+<li>It also speed up the insertion and deletion operations as compare to that in array and linked list.</li>
+</ol>
+<h3 class="h3">Q. Create the binary search tree using the following data elements.</h3>
+<p><strong>43, 10, 79, 90, 12, 54, 11, 9, 50</strong></p>
+<ol class="points">
+<li>Insert 43 into the tree as the root of the tree.</li>
+<li>Read the next element, if it is lesser than the root node element, insert it as the root of the left sub-tree.</li>
+<li>Otherwise, insert it as the root of the right of the right sub-tree.</li>
+</ol>
+<p>The process of creating BST by using the given elements, is shown in the image below.</p>
+<p><br /><img src="https://static.javatpoint.com/ds/images/binary-search-tree-creation.png" alt="Binary Search Tree" /></p>
+<h2 class="h2">Operations on Binary Search Tree</h2>
+<p>There are many operations which can be performed on a binary search tree.</p>
+<table class="alt">
+<tbody>
+<tr>
+<th>SN</th>
+<th>Operation</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.javatpoint.com/searching-in-binary-search-tree">Searching in BST</a></td>
+<td>Finding the location of some specific element in a binary search tree.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://www.javatpoint.com/insertion-in-binary-search-tree">Insertion in BST</a></td>
+<td>Adding a new element to the binary search tree at the appropriate location so that the property of BST do not violate.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://www.javatpoint.com/deletion-in-binary-search-tree">Deletion in BST</a></td>
+<td>Deleting some specific node from a binary search tree. However, there can be various cases in deletion depending upon the number of children, the node have.</td>
+</tr>
+</tbody>
+</table>
+<h2 class="h2">Program to implement BST operations</h2>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">#include&nbsp;&lt;iostream&gt;&nbsp;&nbsp;</li>
+<li class="">#include&nbsp;&lt;stdlib.h&gt;&nbsp;&nbsp;</li>
+<li class="alt">using&nbsp;namespace&nbsp;std;&nbsp;&nbsp;</li>
+<li class="">struct&nbsp;Node&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;data;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;Node&nbsp;*left;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;Node&nbsp;*right;&nbsp;&nbsp;</li>
+<li class="">};&nbsp;&nbsp;</li>
+<li class="alt">Node*&nbsp;create(<span class="keyword">int</span>&nbsp;item)&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;Node*&nbsp;node&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Node;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;node-&gt;data&nbsp;=&nbsp;item;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;node-&gt;left&nbsp;=&nbsp;node-&gt;right&nbsp;=&nbsp;NULL;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;node;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;inorder(Node&nbsp;*root)&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(root&nbsp;==&nbsp;NULL)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;inorder(root-&gt;left);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;cout&lt;&lt;&nbsp;root-&gt;data&nbsp;&lt;&lt;&nbsp;<span class="string">"&nbsp;&nbsp;&nbsp;"</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;inorder(root-&gt;right);&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">Node*&nbsp;findMinimum(Node*&nbsp;cur)&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(cur-&gt;left&nbsp;!=&nbsp;NULL)&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cur&nbsp;=&nbsp;cur-&gt;left;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;cur;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">Node*&nbsp;insertion(Node*&nbsp;root,&nbsp;<span class="keyword">int</span>&nbsp;item)&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(root&nbsp;==&nbsp;NULL)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;create(item);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(item&nbsp;&lt;&nbsp;root-&gt;data)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;root-&gt;left&nbsp;=&nbsp;insertion(root-&gt;left,&nbsp;item);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;root-&gt;right&nbsp;=&nbsp;insertion(root-&gt;right,&nbsp;item);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;root;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;search(Node*&nbsp;&amp;cur,&nbsp;<span class="keyword">int</span>&nbsp;item,&nbsp;Node*&nbsp;&amp;parent)&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>&nbsp;(cur&nbsp;!=&nbsp;NULL&nbsp;&amp;&amp;&nbsp;cur-&gt;data&nbsp;!=&nbsp;item)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent&nbsp;=&nbsp;cur;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(item&nbsp;&lt;&nbsp;cur-&gt;data)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cur&nbsp;=&nbsp;cur-&gt;left;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cur&nbsp;=&nbsp;cur-&gt;right;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">void</span>&nbsp;deletion(Node*&amp;&nbsp;root,&nbsp;<span class="keyword">int</span>&nbsp;item)&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;Node*&nbsp;parent&nbsp;=&nbsp;NULL;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;Node*&nbsp;cur&nbsp;=&nbsp;root;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;search(cur,&nbsp;item,&nbsp;parent);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(cur&nbsp;==&nbsp;NULL)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(cur-&gt;left&nbsp;==&nbsp;NULL&nbsp;&amp;&amp;&nbsp;cur-&gt;right&nbsp;==&nbsp;NULL)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(cur&nbsp;!=&nbsp;root)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(parent-&gt;left&nbsp;==&nbsp;cur)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent-&gt;left&nbsp;=&nbsp;NULL;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent-&gt;right&nbsp;=&nbsp;NULL;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;root&nbsp;=&nbsp;NULL;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;free(cur);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;<span class="keyword">if</span>&nbsp;(cur-&gt;left&nbsp;&amp;&amp;&nbsp;cur-&gt;right)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Node*&nbsp;succ&nbsp;&nbsp;=&nbsp;findMinimum(cur-&nbsp;&gt;right);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;val&nbsp;=&nbsp;succ-&gt;data;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deletion(root,&nbsp;succ-&gt;data);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cur-&gt;data&nbsp;=&nbsp;val;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Node*&nbsp;child&nbsp;=&nbsp;(cur-&gt;left)?&nbsp;Cur-&nbsp;&gt;left:&nbsp;cur-&gt;right;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(cur&nbsp;!=&nbsp;root)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(cur&nbsp;==&nbsp;parent-&gt;left)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent-&gt;left&nbsp;=&nbsp;child;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent-&gt;right&nbsp;=&nbsp;child;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;root&nbsp;=&nbsp;child;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;free(cur);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;main()&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;Node*&nbsp;root&nbsp;=&nbsp;NULL;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;keys[<span class="number">8</span>];&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(<span class="keyword">int</span>&nbsp;i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;&nbsp;<span class="string">"Enter&nbsp;value&nbsp;to&nbsp;be&nbsp;inserted"</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;cin&gt;&gt;keys[i];&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;root&nbsp;=&nbsp;insertion(root,&nbsp;keys[i]);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;inorder(root);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;cout&lt;&lt;<span class="string">"\n"</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;deletion(root,&nbsp;<span class="number">10</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;inorder(root);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;<span class="number">0</span>;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Enter value to be inserted? 10
+Enter value to be inserted? 20
+Enter value to be inserted? 30
+Enter value to be inserted? 40
+Enter value to be inserted?  5 
+Enter value to be inserted? 25
+Enter value to be inserted? 15
+Enter value to be inserted?  5
+
+5	5	10	15	20	25	30	40	
+5	5	15	20	25	30	40</pre>
+</div>

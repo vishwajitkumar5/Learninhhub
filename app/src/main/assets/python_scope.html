@@ -1,0 +1,106 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<h1>Python <span class="color_h1">Scope</span></h1>
+
+<hr>
+<p class="intro">A variable is only available from inside the region it is 
+created. This is called <strong>scope</strong>.</p>
+<hr>
+
+<h2>Local Scope</h2>
+<p>A variable created inside a function belongs to the <em>local scope</em> of 
+that function, and can only be used inside that function.</p>
+<div class="w3-example">
+<h3>Example</h3>
+  <p>A variable created inside a function is available inside that function:</p>
+<div class="w3-code notranslate pythonHigh">
+  def myfunc():<br>&nbsp; x = 300<br>&nbsp; print(x)<br><br>myfunc()</div>
+
+</div>
+
+<h3>Function Inside Function</h3>
+
+<p>As explained in the example above, the variable <code class="w3-codespan">x</code> is not available outside the function, 
+but it is available for any function inside the function:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+  <p>The local variable can be accessed from a function within the function:</p>
+<div class="w3-code notranslate pythonHigh">
+  def myfunc():<br>&nbsp; x = 300<br>&nbsp; def myinnerfunc():<br>&nbsp; &nbsp; print(x)<br>&nbsp; 
+  myinnerfunc()<br><br>myfunc()</div>
+
+</div>
+
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+
+  <!--<pre>mid_content, all: [300,250][336,280][728,90][970,250][970,90][320,50][468,60]</pre>-->
+  <div id="snhb-mid_content-0"></div>
+    
+</div>
+
+<hr>
+
+<h2>Global Scope</h2>
+<p>A variable created in the main body of the Python code is a global variable 
+and belongs to the global scope.</p>
+<p>Global variables are available from within any scope, global and local.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+  <p>A variable created outside of a function is global and can be used by 
+  anyone:</p>
+  <div class="w3-code notranslate pythonHigh">
+    x = 300<br><br>def myfunc():<br>&nbsp; print(x)<br><br>myfunc()<br><br>print(x)</div>
+
+</div>
+
+<h3>Naming Variables</h3>
+
+<p>If you operate with the same variable name inside and outside of a function, Python will treat them as two 
+separate variables,
+one available in the global scope (outside the function) and one available in the local scope (inside the function):</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+  <p>The function will print the local <code class="w3-codespan">x</code>, and 
+  then the code will print the global <code class="w3-codespan">x</code>:</p>
+  <div class="w3-code notranslate pythonHigh">
+    x = 300<br><br>def myfunc():<br>&nbsp; x = 200<br>&nbsp; 
+    print(x)<br><br>myfunc()<br><br>print(x)</div>
+
+</div>
+
+
+<hr>
+<h2>Global Keyword</h2>
+<p>If you need to create a global variable, but are stuck in the local scope, you can use the 
+<code class="w3-codespan">global</code> keyword.</p>
+<p>The <code class="w3-codespan">global</code> keyword makes the variable global.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+  <p>If you use the <code class="w3-codespan">global</code> keyword, the variable belongs to the global scope:</p>
+  <div class="w3-code notranslate pythonHigh">
+    def myfunc():<br>&nbsp; global x<br>&nbsp; x = 300<br><br>myfunc()<br><br>
+    print(x)</div>
+
+</div>
+
+<p>Also, use the <code class="w3-codespan">global</code> keyword if you want to 
+make a change to a global variable inside a function.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+  <p>To change the value of a global variable inside a function, refer to the 
+  variable by using the <code class="w3-codespan">global</code> keyword:</p>
+<div class="w3-code notranslate pythonHigh">
+  x = 300<br><br>def myfunc():<br>&nbsp; global x<br>&nbsp; x = 200<br><br>myfunc()<br>
+  <br>print(x)</div>
+
+</div>
+
+<hr>

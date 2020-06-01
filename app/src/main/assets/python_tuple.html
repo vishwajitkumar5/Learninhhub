@@ -1,0 +1,265 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<h1>Python <span class="color_h1">Tuples</span></h1>
+
+<hr>
+
+<h2>Tuple</h2>
+<p>A tuple is a collection which is ordered and <strong>unchangeable</strong>. In Python tuples are written with round brackets.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Create a Tuple:</p>
+<div class="w3-code notranslate pythonHigh">
+thistuple = ("apple", "banana", "cherry")<br>
+print(thistuple)
+</div>
+
+</div>
+
+<hr>
+<h2>Access Tuple Items</h2>
+<p>You can access tuple items by referring to the index number, inside square 
+brackets:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Print the second item in the tuple:</p>
+<div class="w3-code notranslate pythonHigh">
+thistuple = ("apple", "banana", "cherry")<br>
+print(thistuple[1])
+</div>
+
+</div>
+
+<h3>Negative Indexing</h3>
+<p>Negative indexing means beginning from the end, <code class="w3-codespan">-1</code> refers to the last item, 
+<code class="w3-codespan">-2</code> refers to the second last item etc.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Print the last item of the tuple:</p>
+<div class="w3-code notranslate pythonHigh">
+thistuple = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)<br>
+print(thistuple[-1])
+</div>
+
+</div>
+
+<h3>Range of Indexes</h3>
+<p>You can specify a range of indexes by specifying where to start and where to 
+end the range.</p>
+<p>When specifying a range, the return value will be a new tuple with the 
+specified items.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Return the third, fourth, and fifth item:</p>
+<div class="w3-code notranslate pythonHigh">
+thistuple = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;orange&quot;, &quot;kiwi&quot;, &quot;melon&quot;, &quot;mango&quot;)<br>
+print(thistuple[2:5])
+</div>
+
+</div>
+
+<div class="w3-panel w3-note">
+  <p><strong>Note:</strong> The search will start at index 2 (included) and end at index 5 (not included).</p>
+</div>
+
+<div class="w3-panel w3-note">
+  <p>Remember that the first item has index 0.</p>
+</div>
+
+<h3>Range of Negative Indexes</h3>
+<p>Specify negative indexes if you want to start the search from the end of the 
+tuple:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>This example returns the items from index -4 (included) to index -1 (excluded)</p>
+<div class="w3-code notranslate pythonHigh">
+thistuple = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;orange&quot;, &quot;kiwi&quot;, &quot;melon&quot;, &quot;mango&quot;)<br>
+print(thistuple[-4:-1])
+</div>
+
+</div>
+
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+
+  <!--<pre>mid_content, all: [300,250][336,280][728,90][970,250][970,90][320,50][468,60]</pre>-->
+  <div id="snhb-mid_content-0"></div>
+    
+</div>
+
+<hr>
+<h2>Change Tuple Values</h2>
+
+<p>Once a tuple is created, you cannot change its values. Tuples are <strong>unchangeable</strong>, 
+or <strong>immutable</strong> as it also is called.</p>
+<p>But there is a workaround. You can convert the tuple into a list, change the 
+list, and convert the list back into a tuple.</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Convert the tuple into a list to be able to change it:</p>
+<div class="w3-code notranslate pythonHigh">
+  x = ("apple", "banana", "cherry")<br>y = list(x)<br>y[1] = &quot;kiwi&quot;<br>x = 
+  tuple(y)<br><br>print(x)</div>
+
+</div>
+
+<!--
+<div class="w3-example">
+<h3>Example</h3>
+<p>You cannot change values in a tuple:</p>
+<div class="w3-code notranslate pythonHigh">
+thistuple = ("apple", "banana", "cherry")<br>
+thistuple[1] = "blackcurrant"<br># The values will remain the same:<br>print(thistuple)
+</div>
+<a target="_blank" class="w3-btn w3-margin-bottom" href="showpython.asp?filename=demo_tuple2">Run example &raquo;</a>
+</div>
+-->
+<hr>
+<h2>Loop Through a Tuple</h2>
+
+<p>You can loop through the tuple items by using a <code class="w3-codespan">for</code> loop.</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Iterate through the items and print the values:</p>
+<div class="w3-code notranslate pythonHigh">
+thistuple = ("apple", "banana", "cherry")<br>
+  for x in thistuple:<br>&nbsp; print(x)</div>
+
+</div>
+
+<p>You will learn more about <code class="w3-codespan">for</code> loops in our Python For Loops  Chapter.</p>
+
+<hr>
+<h2>Check if Item Exists</h2>
+
+<p>To determine if a specified item is present in a tuple use the <code class="w3-codespan">in</code> keyword:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Check if "apple" is present in the tuple:</p>
+<div class="w3-code notranslate pythonHigh">
+thistuple = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)<br>
+  if &quot;apple&quot; in thistuple:<br>&nbsp; print(&quot;Yes, 'apple' is in the fruits tuple&quot;)</div>
+
+</div>
+
+<hr>
+
+<h2>Tuple Length</h2>
+
+<p>To determine how many items a tuple has, use the <code class="w3-codespan">len()</code> method:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Print the number of items in the tuple:</p>
+<div class="w3-code notranslate pythonHigh">
+thistuple = ("apple", "banana", "cherry")<br>
+  print(len(thistuple))</div>
+
+</div>
+
+<hr>
+
+<h2>Add Items</h2>
+
+<p>Once a tuple is created, you cannot add items to it. Tuples are <strong>unchangeable</strong>.</p>
+<div class="w3-example w3-pale-red">
+<h3>Example</h3>
+<p>You cannot add items to a tuple:</p>
+<div class="w3-code notranslate pythonHigh">
+thistuple = ("apple", "banana", "cherry")<br>
+thistuple[3] = "orange&quot; # This will raise an error<br>print(thistuple)
+</div>
+
+</div>
+
+<hr>
+
+<h2>Create Tuple With One Item</h2>
+
+<p>To create a tuple with only one item, you have add a comma after the item, 
+unless Python will not recognize the variable as a tuple.</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>One item tuple, remember the commma:</p>
+<div class="w3-code notranslate pythonHigh">
+thistuple = ("apple",)<br>
+  print(type(thistuple))<br><br>#NOT a tuple<br>thistuple = (&quot;apple&quot;)<br>
+  print(type(thistuple))</div>
+
+</div>
+
+<hr>
+
+<h2>Remove Items</h2>
+
+<div class="w3-panel w3-note">
+  <p><strong>Note:</strong> You cannot remove items in a tuple.</p>
+</div>
+
+<p>&nbsp;Tuples are <strong>unchangeable</strong>, so you cannot remove items 
+from it, but you can delete the tuple completely:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>The <code class="w3-codespan">del</code> keyword can delete the tuple 
+completely:</p>
+<div class="w3-code notranslate pythonHigh">
+thistuple = ("apple", "banana", "cherry")<br>
+  del
+thistuple<br>print(thistuple)
+  #this will raise an error because the tuple no longer exists</div>
+
+</div>
+
+<hr>
+
+<h2>Join Two Tuples</h2>
+<p>To join two or more tuples you can use the <code class="w3-codespan">+</code> 
+operator:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Join two tuples:</p>
+<div class="w3-code notranslate pythonHigh">
+  tuple1 = (&quot;a&quot;, &quot;b&quot; , &quot;c&quot;)<br>tuple2 = (1, 2, 3)<br><br>
+  tuple3 = tuple1 + tuple2<br>
+  print(tuple3)</div>
+
+</div>
+
+<hr>
+
+<h2>The tuple() Constructor</h2>
+<p>It is also possible to use the <span class="w3-codespan">tuple()</span> constructor to make a tuple.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Using the tuple() method to make a tuple:</p>
+<div class="w3-code notranslate pythonHigh">
+thistuple = tuple(("apple", "banana", "cherry")) # note the double round-brackets<br>
+print(thistuple)
+</div>
+
+</div>
+
+<hr>
+
+<h2>Tuple Methods</h2>
+
+<p>Python has two built-in methods that you can use on tuples.</p>
+
+<table class="w3-table-all notranslate">
+<tr>
+<th style="width:20%">Method</th>
+<th>Description</th>
+</tr>
+<tr><td>count()</td><td>Returns the number of times a specified value occurs in a tuple</td></tr>
+<tr><td><index()</td><td>Searches the tuple for a specified value and returns the position of where it was found</td></tr>
+</table>
+<hr>

@@ -1,0 +1,49 @@
+<h1 class="h1" style="text-align: center;">Palindrome program in C</h1>
+<p>&nbsp;</p>
+<p>Palindrome number in c: A&nbsp;<strong>palindrome number</strong>&nbsp;is&nbsp;<em>a number that is same after reverse</em>. For example 121, 34543, 343, 131, 48984 are the palindrome numbers.</p>
+<h2 class="h2">Palindrome number algorithm</h2>
+<ul class="points">
+<li>Get the number from user</li>
+<li>Hold the number in temporary variable</li>
+<li>Reverse the number</li>
+<li>Compare the temporary number with reversed number</li>
+<li>If both numbers are same, print palindrome number</li>
+<li>Else print not palindrome number</li>
+</ul>
+<p>Let's see the palindrome program in C. In this c program, we will get an input from the user and check whether number is palindrome or not.</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-cpp" start="1">
+<li class="alt"><span class="preprocessor">#include&lt;stdio.h&gt;</span>&nbsp;&nbsp;</li>
+<li class=""><span class="datatypes">int</span>&nbsp;main()&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="datatypes">int</span>&nbsp;n,r,sum=0,temp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">printf(<span class="string">"enter&nbsp;the&nbsp;number="</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">scanf(<span class="string">"%d"</span>,&amp;n);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">temp=n;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">while</span>(n&gt;0)&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">{&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">r=n%10;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">sum=(sum*10)+r;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">n=n/10;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">if</span>(temp==sum)&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">printf(<span class="string">"palindrome&nbsp;number&nbsp;"</span>);&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">else</span>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">printf(<span class="string">"not&nbsp;palindrome"</span>);&nbsp;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">return</span>&nbsp;0;&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p>Output:</p>
+<div class="codeblock3">
+<pre>enter the number=151
+palindrome  number
+</pre>
+</div>
+<div class="codeblock3">
+<pre>enter the number=5621
+not palindrome  number</pre>
+</div>

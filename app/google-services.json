@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1090076242430",
+    "firebase_url": "https://learning-hub-614a7.firebaseio.com",
+    "project_id": "learning-hub-614a7",
+    "storage_bucket": "learning-hub-614a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090076242430:android:bb4de6546e2862a82d10af",
+        "android_client_info": {
+          "package_name": "com.example.learninghub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1090076242430-hau56drtlmj1ma9c95jpaa03g2nt6i49.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz9Ir4y5G_h4VrWHVvcmMN7-fwZWBivUM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1090076242430-hau56drtlmj1ma9c95jpaa03g2nt6i49.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

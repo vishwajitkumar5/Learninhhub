@@ -1,0 +1,126 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+<h2>Execute Python Syntax</h2>
+
+<p>As we learned in the previous page, Python syntax can be executed by writing directly in the Command Line:</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate w3-black">
+&gt;&gt;&gt; print("Hello, World!")<br>
+Hello, World!
+</div>
+</div>
+
+<p>Or by creating a python file on the server, using the .py file extension, and running it in the Command Line:</p>
+
+<div class="w3-example">
+<div class="w3-code notranslate w3-black">
+C:\Users\<em>Your Name</em>&gt;python myfile.py
+</div>
+</div>
+
+</div>
+
+<hr>
+
+<a id="python_indentation"></a>
+<h2>Python Indentation</h2>
+
+<p>Indentation refers to the spaces at the beginning of a code line.</p>
+<p>Where in other programming languages the indentation in code is for readability 
+only, the indentation in Python is very important.</p>
+<p>Python uses indentation to indicate a block of code.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate pythonHigh">
+  if 5 &gt; 2:<br>&nbsp;
+print("Five is greater than two!")
+</div>
+
+</div>
+
+<p>Python will give you an error if you skip the indentation:</p>
+
+<div class="w3-example w3-pale-red">
+<h3>Example</h3>
+  <p>Syntax Error:</p>
+<div class="w3-code notranslate pythonHigh">
+if 5 &gt; 2:<br>
+print("Five is greater than two!")
+</div>
+
+</div>
+
+<p>The number of spaces is up to you as a programmer, but it has 
+to be at least one.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate pythonHigh">
+  if 5 &gt; 2:<br>&nbsp;print("Five is greater than two!")&nbsp;
+<br>if 5 &gt; 2:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print("Five is greater than two!")&nbsp;
+</div>
+
+</div>
+
+<p>You have to use the same number of spaces in the same block of code, 
+otherwise Python will give you an error:</p>
+
+<div class="w3-example w3-pale-red">
+<h3>Example</h3>
+  <p>Syntax Error:</p>
+<div class="w3-code notranslate pythonHigh">
+if 5 &gt; 2:<br>
+&nbsp;print("Five is greater than two!")
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print(&quot;Five is greater than 
+  two!&quot;)</div>
+
+</div>
+
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+
+  <!--<pre>mid_content, all: [300,250][336,280][728,90][970,250][970,90][320,50][468,60]</pre>-->
+  <div id="snhb-mid_content-0"></div>
+    
+</div>
+<hr>
+
+<a id="python_variables"></a>
+<h2>Python Variables</h2>
+
+<p>In Python variables are created the moment you assign a value to it:
+<div class="w3-example">
+<h3>Example</h3>
+<p>Variables in Python:</p>
+<div class="w3-code notranslate pythonHigh">
+  x = 5<br>y = &quot;Hello, World!&quot;
+</div>
+
+</div>
+
+<p>Python has no command for declaring a variable.</p>
+<p>You will learn more about variables in the 
+Python Variables chapter.</p>
+<hr>
+<a id="python_comments"></a>
+<h2>Comments</h2>
+
+<p>Python has commenting capability for the purpose of in-code documentation.</p>
+<p>Comments start with a #, and Python will render the rest of the line as a comment:
+<div class="w3-example">
+<h3>Example</h3>
+<p>Comments in Python:</p>
+<div class="w3-code notranslate pythonHigh">
+#This is a comment.<br>
+print("Hello, World!")
+</div>
+
+</div>
+

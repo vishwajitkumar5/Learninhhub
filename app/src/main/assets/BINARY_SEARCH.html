@@ -1,0 +1,192 @@
+<h1 class="h1" style="text-align: center;">Binary Search</h1>
+<p>Binary search is the search technique which works efficiently on the sorted lists. Hence, in order to search an element into some list by using binary search technique, we must ensure that the list is sorted.</p>
+<p>Binary search follows divide and conquer approach in which, the list is divided into two halves and the item is compared with the middle element of the list. If the match is found then, the location of middle element is returned otherwise, we search into either of the halves depending upon the result produced through the match.</p>
+<p>Binary search algorithm is given below.</p>
+<h2 class="h2">BINARY_SEARCH(A, lower_bound, upper_bound, VAL)</h2>
+<ul class="points">
+<li><strong>Step 1:</strong>&nbsp;[INITIALIZE] SET BEG = lower_bound<br />END = upper_bound, POS = - 1</li>
+<li><strong>Step 2:</strong>&nbsp;Repeat Steps 3 and 4 while BEG &lt;=END</li>
+<li><strong>Step 3:</strong>&nbsp;SET MID = (BEG + END)/2</li>
+<li><strong>Step 4:</strong>&nbsp;IF A[MID] = VAL<br />SET POS = MID<br />PRINT POS<br />Go to Step 6<br />ELSE IF A[MID] &gt; VAL<br />SET END = MID - 1<br />ELSE<br />SET BEG = MID + 1<br />[END OF IF]<br />[END OF LOOP]</li>
+<li><strong>Step 5:</strong>&nbsp;IF POS = -1<br />PRINT "VALUE IS NOT PRESENT IN THE ARRAY"<br />[END OF IF]</li>
+<li><strong>Step 6:</strong>&nbsp;EXIT</li>
+</ul>
+<h2 class="h2">Complexity</h2>
+<table class="alt">
+<tbody>
+<tr>
+<th>SN</th>
+<th>Performance</th>
+<th>Complexity</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Worst case</td>
+<td>O(log n)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Best case</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Average Case</td>
+<td>O(log n)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Worst case space complexity</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<h3 class="h3">Example</h3>
+<p>Let us consider an array arr = {1, 5, 7, 8, 13, 19, 20, 23, 29}. Find the location of the item 23 in the array.</p>
+<p><strong>In 1<sup>st</sup>&nbsp;step :</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">BEG&nbsp;=&nbsp;<span class="number">0</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="">END&nbsp;=&nbsp;8ron&nbsp;&nbsp;</li>
+<li class="alt">MID&nbsp;=&nbsp;<span class="number">4</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="">a[mid]&nbsp;=&nbsp;a[<span class="number">4</span>]&nbsp;=&nbsp;<span class="number">13</span>&nbsp;&lt;&nbsp;<span class="number">23</span>,&nbsp;therefore&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>in Second step:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">Beg&nbsp;=&nbsp;mid&nbsp;+<span class="number">1</span>&nbsp;=&nbsp;<span class="number">5</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="">End&nbsp;=&nbsp;<span class="number">8</span>&nbsp;&nbsp;</li>
+<li class="alt">mid&nbsp;=&nbsp;<span class="number">13</span>/<span class="number">2</span>&nbsp;=&nbsp;<span class="number">6</span>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">a[mid]&nbsp;=&nbsp;a[<span class="number">6</span>]&nbsp;=&nbsp;<span class="number">20</span>&nbsp;&lt;&nbsp;<span class="number">23</span>,&nbsp;therefore;&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>in third step:</strong></p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">beg&nbsp;=&nbsp;mid&nbsp;+&nbsp;<span class="number">1</span>&nbsp;=&nbsp;<span class="number">7</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="">End&nbsp;=&nbsp;<span class="number">8</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">mid&nbsp;=&nbsp;<span class="number">15</span>/<span class="number">2</span>&nbsp;=&nbsp;<span class="number">7</span>&nbsp;&nbsp;</li>
+<li class="">a[mid]&nbsp;=&nbsp;a[<span class="number">7</span>]&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;a[<span class="number">7</span>]&nbsp;=&nbsp;<span class="number">23</span>&nbsp;=&nbsp;item;&nbsp;&nbsp;&nbsp;</li>
+<li class="">therefore,&nbsp;set&nbsp;location&nbsp;=&nbsp;mid;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">The&nbsp;location&nbsp;of&nbsp;the&nbsp;item&nbsp;will&nbsp;be&nbsp;<span class="number">7</span>.&nbsp;&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><br /><img src="https://static.javatpoint.com/ds/images/binary-search-example.png" alt="Binary Search" /></p>
+<h2 class="h2">Binary Search Program using Recursion</h2>
+<h3 class="h3">C program</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt">#include&lt;stdio.h&gt;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">int</span>&nbsp;binarySearch(<span class="keyword">int</span>[],&nbsp;<span class="keyword">int</span>,&nbsp;<span class="keyword">int</span>,&nbsp;<span class="keyword">int</span>);&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">void</span>&nbsp;main&nbsp;()&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;arr[<span class="number">10</span>]&nbsp;=&nbsp;{<span class="number">16</span>,&nbsp;<span class="number">19</span>,&nbsp;<span class="number">20</span>,&nbsp;<span class="number">23</span>,&nbsp;<span class="number">45</span>,&nbsp;<span class="number">56</span>,&nbsp;<span class="number">78</span>,&nbsp;<span class="number">90</span>,&nbsp;<span class="number">96</span>,&nbsp;<span class="number">100</span>};&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;item,&nbsp;location=-<span class="number">1</span>;&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"Enter&nbsp;the&nbsp;item&nbsp;which&nbsp;you&nbsp;want&nbsp;to&nbsp;search&nbsp;"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;scanf(<span class="string">"%d"</span>,&amp;item);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;location&nbsp;=&nbsp;binarySearch(arr,&nbsp;<span class="number">0</span>,&nbsp;<span class="number">9</span>,&nbsp;item);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(location&nbsp;!=&nbsp;-<span class="number">1</span>)&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"Item&nbsp;found&nbsp;at&nbsp;location&nbsp;%d"</span>,location);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<span class="string">"Item&nbsp;not&nbsp;found"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">int</span>&nbsp;binarySearch(<span class="keyword">int</span>&nbsp;a[],&nbsp;<span class="keyword">int</span>&nbsp;beg,&nbsp;<span class="keyword">int</span>&nbsp;end,&nbsp;<span class="keyword">int</span>&nbsp;item)&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;mid;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(end&nbsp;&gt;=&nbsp;beg)&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mid&nbsp;=&nbsp;(beg&nbsp;+&nbsp;end)/<span class="number">2</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(a[mid]&nbsp;==&nbsp;item)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;mid+<span class="number">1</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;<span class="keyword">if</span>(a[mid]&nbsp;&lt;&nbsp;item)&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;binarySearch(a,mid+<span class="number">1</span>,end,item);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;binarySearch(a,beg,mid-<span class="number">1</span>,item);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;-<span class="number">1</span>;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Enter the item which you want to search 
+19 
+Item found at location 2
+</pre>
+</div>
+<h3 class="h3">Java</h3>
+<div class="codeblock">
+<div class="dp-highlighter">
+<div class="bar">&nbsp;</div>
+<ol class="dp-j" start="1">
+<li class="alt"><span class="keyword">import</span>&nbsp;java.util.*;&nbsp;&nbsp;</li>
+<li class=""><span class="keyword">public</span>&nbsp;<span class="keyword">class</span>&nbsp;BinarySearch&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">void</span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>[]&nbsp;arr&nbsp;=&nbsp;{<span class="number">16</span>,&nbsp;<span class="number">19</span>,&nbsp;<span class="number">20</span>,&nbsp;<span class="number">23</span>,&nbsp;<span class="number">45</span>,&nbsp;<span class="number">56</span>,&nbsp;<span class="number">78</span>,&nbsp;<span class="number">90</span>,&nbsp;<span class="number">96</span>,&nbsp;<span class="number">100</span>};&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;item,&nbsp;location&nbsp;=&nbsp;-<span class="number">1</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Enter&nbsp;the&nbsp;item&nbsp;which&nbsp;you&nbsp;want&nbsp;to&nbsp;search"</span>);&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;Scanner&nbsp;sc&nbsp;=&nbsp;<span class="keyword">new</span>&nbsp;Scanner(System.in);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;item&nbsp;=&nbsp;sc.nextInt();&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;location&nbsp;=&nbsp;binarySearch(arr,<span class="number">0</span>,<span class="number">9</span>,item);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(location&nbsp;!=&nbsp;-<span class="number">1</span>)&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"the&nbsp;location&nbsp;of&nbsp;the&nbsp;item&nbsp;is&nbsp;"</span>+location);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Item&nbsp;not&nbsp;found"</span>);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt"><span class="keyword">public</span>&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">int</span>&nbsp;binarySearch(<span class="keyword">int</span>[]&nbsp;a,&nbsp;<span class="keyword">int</span>&nbsp;beg,&nbsp;<span class="keyword">int</span>&nbsp;end,&nbsp;<span class="keyword">int</span>&nbsp;item)&nbsp;&nbsp;</li>
+<li class="">{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;mid;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(end&nbsp;&gt;=&nbsp;beg)&nbsp;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mid&nbsp;=&nbsp;(beg&nbsp;+&nbsp;end)/<span class="number">2</span>;&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(a[mid]&nbsp;==&nbsp;item)&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;mid+<span class="number">1</span>;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;<span class="keyword">if</span>(a[mid]&nbsp;&lt;&nbsp;item)&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;binarySearch(a,mid+<span class="number">1</span>,end,item);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;binarySearch(a,beg,mid-<span class="number">1</span>,item);&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li class="">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</li>
+<li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;-<span class="number">1</span>;&nbsp;&nbsp;&nbsp;</li>
+<li class="">}&nbsp;&nbsp;</li>
+<li class="alt">}&nbsp;&nbsp;</li>
+</ol>
+</div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3">
+<pre>Enter the item which you want to search 
+45 
+the location of the item is 5</pre>
+</div>
